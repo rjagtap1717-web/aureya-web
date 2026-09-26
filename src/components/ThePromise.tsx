@@ -17,7 +17,7 @@ export default function ThePromise() {
   return (
     <section
       ref={ref}
-      className="relative w-full min-h-screen flex flex-col items-center justify-center py-32 px-6 overflow-hidden"
+      className="relative w-full min-h-[100dvh] flex flex-col items-center justify-center py-32 px-6 overflow-hidden"
     >
       {/* Ambient glow */}
       <div className="absolute inset-0 pointer-events-none">

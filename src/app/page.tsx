@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-background text-foreground">
+    <main className="min-h-[100dvh] bg-background text-foreground">
       {/* Section 1: Hero + Scroll Animation */}
       <HeroCanvas />
 

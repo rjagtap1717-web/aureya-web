@@ -121,7 +121,7 @@ export default function HeroCanvas() {
   }, []);
 
   return (
-    <div ref={containerRef} className="relative w-full h-screen bg-transparent z-0">
+    <div ref={containerRef} className="relative w-full h-[100dvh] bg-transparent z-0">
       <canvas ref={canvasRef} className="absolute inset-0 pointer-events-none" />
       <div className="absolute inset-0 flex flex-col items-center justify-start pt-32 pointer-events-none z-10 mix-blend-difference text-white">
         <h1 className="text-6xl md:text-8xl font-serif tracking-tight opacity-80">AUREYA</h1>

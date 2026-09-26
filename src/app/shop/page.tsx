@@ -19,7 +19,7 @@ export default function ShopPage() {
       animate={{ opacity: 1, filter: 'blur(0px)' }}
       exit={{ opacity: 0, filter: 'blur(10px)' }}
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-      className="min-h-screen bg-background text-foreground pt-32 pb-24"
+      className="min-h-[100dvh] bg-background text-foreground pt-32 pb-24"
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-24">
         <p className="font-sans text-xs tracking-[0.3em] uppercase text-foreground/40 mb-4">Acquire</p>
