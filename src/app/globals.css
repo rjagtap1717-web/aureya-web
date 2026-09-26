@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fbfbf9;
+  --foreground: #111111;
+  --accent: #b48530; /* Amber/Gold */
+  --accent-light: #dfbc77;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --color-accent-light: var(--accent-light);
+  --font-serif: var(--font-playfair);
+  --font-sans: var(--font-inter);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0d0d0c;
+    --foreground: #f4f4f2;
+    --accent: #d8aa53;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif), serif;
+  font-weight: 400;
+}
+
+/* Custom Scrollbar for Luxury Feel */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(180, 133, 48, 0.3);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(180, 133, 48, 0.5);
+}
