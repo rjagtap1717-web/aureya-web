@@ -35,7 +35,7 @@ export default function ReviewsPage() {
             The Waitlist.
           </h1>
           <p className="font-sans text-sm leading-relaxed text-foreground/60">
-            Aureya is currently in closed beta. Over 2,148 individuals across India are awaiting the public release of The Cellular Reset.
+            Yora is currently in closed beta. Over 2,148 individuals across India are awaiting the public release of The Cellular Reset.
           </p>
         </motion.div>
 

@@ -49,7 +49,7 @@ export default function ClosingCTA() {
             href="/shop"
             className="group inline-flex items-center gap-4 font-sans text-sm tracking-[0.25em] uppercase px-12 py-5 bg-foreground text-background hover:bg-accent hover:text-white transition-all duration-500 ease-out"
           >
-            Shop AUREYA
+            Shop YORA
             <motion.span
               className="inline-block"
               animate={{ x: [0, 4, 0] }}

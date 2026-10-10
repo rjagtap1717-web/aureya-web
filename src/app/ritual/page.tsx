@@ -32,7 +32,7 @@ export default function RitualPage() {
             The Act of <span className="italic text-foreground/70">Intention.</span>
           </h1>
           <p className="font-sans text-sm leading-relaxed text-foreground/60 max-w-xl">
-            The unscrewing of the heavy gold cap. The subtle sound of glass. Taking Aureya is not a habit; it is a daily commitment to your own standard.
+            Opening the bottle each morning isn't just another habit. Taking Yora is a deliberate choice and a daily commitment to your highest standard.
           </p>
         </motion.div>
 
@@ -97,7 +97,7 @@ export default function RitualPage() {
           <h2 className="font-serif text-3xl mb-12 text-center">Frequently Asked Questions</h2>
           <div className="space-y-6">
             {[
-              { q: 'Can I take it with coffee?', a: 'Yes, but for optimal absorption, we recommend taking Aureya 45 minutes prior to your first coffee. Cordyceps naturally modulates cortisol, which coffee spikes.' },
+              { q: 'Can I take it with coffee?', a: 'Yes, but for optimal absorption, we recommend taking Yora 45 minutes before your first coffee. Cordyceps naturally modulates cortisol, which coffee spikes.' },
               { q: 'Is it vegetarian?', a: 'Absolutely. We use 100% vegan capsules and our Cordyceps Militaris is cultivated on organic grain substrates, never insects.' },
               { q: 'When will I feel it?', a: 'Acute cognitive clarity is often felt within 60 minutes. Deep cellular shifts—like increased VO2 max and lower stress—compound over 14 to 30 days of consistent use.' }
             ].map((faq, i) => (

@@ -40,7 +40,7 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link href="/" className="font-serif text-xl tracking-[0.3em] uppercase text-foreground hover:text-accent transition-colors duration-300">
-            AUREYA
+            YORA
           </Link>
 
           {/* Desktop Nav */}

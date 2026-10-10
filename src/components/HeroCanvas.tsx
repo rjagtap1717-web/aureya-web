@@ -124,8 +124,7 @@ export default function HeroCanvas() {
     <div ref={containerRef} className="relative w-full h-[100dvh] bg-transparent z-0">
       <canvas ref={canvasRef} className="absolute inset-0 pointer-events-none" />
       <div className="absolute inset-0 flex flex-col items-center justify-start pt-32 pointer-events-none z-10 mix-blend-difference text-white">
-        <h1 className="text-6xl md:text-8xl font-serif tracking-tight opacity-80">AUREYA</h1>
-        <p className="mt-4 text-sm font-sans tracking-[0.3em] uppercase opacity-70">The Absolute Standard</p>
+        <img src="/yora-logo.png" alt="YORA" className="h-16 md:h-24 lg:h-32 object-contain opacity-80" />
       </div>
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-xs font-sans tracking-widest uppercase opacity-50 flex flex-col items-center animate-pulse">
         <span>Scroll to Experience</span>

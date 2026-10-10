@@ -48,14 +48,31 @@ export default function AboutPage() {
                 We grew tired of the dilution. We wanted the pure fruiting body. We wanted a clinical dose. We wanted a vessel that respected the molecule.
               </p>
               <p>
-                Aureya is the result of an obsession with the absolute standard. We source only strictly cultivated Cordyceps Militaris to ensure hyper-consistent polysaccharide concentration. We encapsulate it in borosilicate glass to block UV degradation and plasticizer leaching.
+                Yora was born from an obsession with setting a new standard. We source only strictly cultivated Cordyceps militaris to ensure a hyper-consistent polysaccharide concentration. Every bottle is hermetically sealed to preserve the active compounds from humidity and light.
               </p>
               <p>
                 It is not for everyone. It is for those who demand their baseline be elevated, systematically and scientifically.
               </p>
-              <div className="pt-8">
-                <span className="font-serif text-2xl italic text-foreground block mb-2">The Aureya Team</span>
-                <span className="font-sans text-xs tracking-widest uppercase text-accent">Founders</span>
+              <div className="pt-8 flex flex-col sm:flex-row gap-8">
+                <div className="flex items-center gap-4">
+                  <div className="w-16 h-16 bg-foreground/5 rounded-full overflow-hidden border border-foreground/10 flex items-center justify-center">
+                     <span className="font-serif text-sm opacity-50">AJ</span>
+                  </div>
+                  <div>
+                    <span className="font-serif text-xl italic text-foreground block">Aditya Jadhav</span>
+                    <span className="font-sans text-[10px] tracking-widest uppercase text-accent">Co-Founder</span>
+                  </div>
+                </div>
+                
+                <div className="flex items-center gap-4">
+                  <div className="w-16 h-16 bg-foreground/5 rounded-full overflow-hidden border border-foreground/10">
+                     <img src="/rushikesh.jpeg" alt="Rushikesh Jagtap" className="w-full h-full object-cover" />
+                  </div>
+                  <div>
+                    <span className="font-serif text-xl italic text-foreground block">Rushikesh Jagtap</span>
+                    <span className="font-sans text-[10px] tracking-widest uppercase text-accent">Co-Founder</span>
+                  </div>
+                </div>
               </div>
             </div>
           </motion.div>

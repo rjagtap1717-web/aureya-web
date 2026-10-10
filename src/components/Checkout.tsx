@@ -32,7 +32,7 @@ export default function Checkout({ variant }: CheckoutProps) {
         key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID || 'rzp_test_mock',
         amount: order.amount,
         currency: order.currency,
-        name: 'AUREYA',
+        name: 'YORA',
         description: variant === 'variant-a' ? 'The Discovery Ritual (20 Capsules)' : 'The Cellular Reset (60 Capsules)',
         order_id: order.orderId,
         handler: async function (response: any) {
@@ -48,7 +48,7 @@ export default function Checkout({ variant }: CheckoutProps) {
           
           const verifyData = await verifyRes.json();
           if (verifyData.success) {
-            setMessage('Payment Successful. Welcome to Aureya.');
+            setMessage("Payment successful. We're thrilled to have you join Yora.");
           } else {
             setMessage('Payment verification failed.');
           }

@@ -16,8 +16,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "AUREYA | Cellular Reset & Discovery Ritual",
-  description: "Aureya Cordyceps Militaris gelatin capsules in a heavy, premium custom glass jar.",
+  title: "YORA | Cellular Reset & Discovery Ritual",
+  description: "Yora Cordyceps militaris capsules for sustained energy and focus.",
 };
 
 export default function RootLayout({
@@ -26,8 +26,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
-      <body className="antialiased selection:bg-accent/20 selection:text-accent">
+    <html lang="en" className={`${playfair.variable} ${inter.variable}`} suppressHydrationWarning>
+      <body className="antialiased selection:bg-accent/20 selection:text-accent" suppressHydrationWarning>
         <Navbar />
         {children}
       </body>

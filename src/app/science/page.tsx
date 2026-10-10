@@ -37,7 +37,7 @@ export default function SciencePage() {
           <div>
             <h2 className="font-serif text-3xl mb-6">The Compound</h2>
             <p className="font-sans text-sm leading-relaxed text-foreground/70 mb-6">
-              Aureya utilizes exclusively Cordyceps Militaris, cultivated in sterile, light-controlled environments. Unlike wild Ophiocordyceps Sinensis which varies wildly in active compound concentration, our Militaris strain guarantees a 98.3% polysaccharide purity.
+              Yora uses only cultivated Cordyceps militaris, grown in strictly controlled environments. Wild cordyceps can be incredibly inconsistent, but our strain guarantees 98.3% polysaccharide purity every single time.
             </p>
             <p className="font-sans text-sm leading-relaxed text-foreground/70">
               The primary active molecule, Cordycepin (3'-deoxyadenosine), directly interacts with your cellular ATP cycle.
@@ -70,31 +70,56 @@ export default function SciencePage() {
           </div>
         </motion.div>
 
-        <motion.div variants={itemVariants} className="mt-32 flex flex-col md:flex-row items-center justify-between bg-foreground text-background p-12 md:p-24 rounded-2xl">
-          <div className="max-w-md">
-            <h2 className="font-serif text-3xl mb-6">Certificate of Analysis</h2>
-            <p className="font-sans text-sm leading-relaxed opacity-70 mb-8">
-              We operate with absolute transparency. Every batch is rigorously tested for heavy metals, microbial contaminants, and precise active compound verification.
-            </p>
-            <button className="font-sans text-xs tracking-widest uppercase border border-background/20 px-8 py-4 hover:bg-background hover:text-foreground transition-all duration-300">
-              Download Latest COA (PDF)
-            </button>
+        <motion.div variants={itemVariants} className="mt-32 flex flex-col lg:flex-row items-start justify-between bg-foreground text-background p-12 md:p-24 rounded-2xl gap-16">
+          <div className="flex-1">
+            <p className="font-sans text-xs tracking-[0.3em] uppercase text-accent mb-4">Verification</p>
+            <h2 className="font-serif text-4xl mb-12">Purity & Provenance</h2>
+            
+            <div className="space-y-8">
+              <div>
+                <h3 className="font-serif text-xl text-accent mb-2">Maximum Bioavailability</h3>
+                <p className="font-sans text-sm leading-relaxed opacity-70">
+                  98.3% active polysaccharide purity—delivering higher potency per dose than standard commercial extracts.
+                </p>
+              </div>
+              
+              <div>
+                <h3 className="font-serif text-xl text-accent mb-2">Potency Preservation</h3>
+                <p className="font-sans text-sm leading-relaxed opacity-70">
+                  Freshness-locked in premium UV-protective packaging to ensure the active compounds remain at absolute peak efficacy from the first capsule to the last.
+                </p>
+              </div>
+              
+              <div>
+                <h3 className="font-serif text-xl text-accent mb-2">Absolute Transparency</h3>
+                <p className="font-sans text-sm leading-relaxed opacity-70 mb-6">
+                  Every batch is rigorously third-party tested for heavy metals, microbial contaminants, and precise active compound verification.
+                </p>
+                <a href="/latestcordyreport" target="_blank" rel="noopener noreferrer" className="inline-block font-sans text-xs tracking-widest uppercase border border-background/20 px-8 py-4 hover:bg-background hover:text-foreground transition-all duration-300">
+                  Download Latest COA (PDF)
+                </a>
+              </div>
+            </div>
           </div>
-          <div className="mt-12 md:mt-0 w-48 h-48 border-4 border-background/10 rounded-full flex items-center justify-center relative">
+          
+          <div className="hidden lg:flex w-64 h-64 border-4 border-background/10 rounded-full items-center justify-center relative shrink-0 mt-8">
             <div className="absolute inset-0 border border-accent rounded-full animate-[spin_10s_linear_infinite]" />
-            <span className="font-serif text-2xl text-accent">98.3%</span>
+            <div className="text-center">
+              <span className="font-serif text-4xl text-accent block">98.3%</span>
+              <span className="font-sans text-[10px] tracking-widest uppercase opacity-50 mt-2 block">Purity Threshold</span>
+            </div>
           </div>
-        </motion.div>
-
-        <motion.div variants={itemVariants} className="mt-32 max-w-3xl mx-auto text-center">
-          <p className="font-sans text-xs tracking-[0.3em] uppercase text-foreground/40 mb-4">Packaging Integrity</p>
-          <h2 className="font-serif text-3xl mb-6">Why Glass Matters</h2>
-          <p className="font-sans text-sm leading-relaxed text-foreground/70">
-            Active biological compounds degrade when exposed to plasticizers and UV light. We use strictly heavy, dark-tinted borosilicate glass. Zero plastic leaching. Complete molecular preservation.
-          </p>
         </motion.div>
 
       </div>
+
+      <motion.div variants={itemVariants} className="mt-32 max-w-3xl mx-auto text-center">
+        <p className="font-sans text-xs tracking-[0.3em] uppercase text-foreground/40 mb-4">Zero Fillers</p>
+        <h2 className="font-serif text-3xl mb-6">100% Fruiting Body Extract</h2>
+        <p className="font-sans text-sm leading-relaxed text-foreground/70">
+          A lot of cordyceps supplements on the market are just mycelium grown on grain, which means you're mostly paying for inactive starch and oats. Yora uses nothing but 100% pure fruiting bodies. This gives you the absolute maximum concentration of active beta-glucans and cordycepin, without any cheap fillers.
+        </p>
+      </motion.div>
     </motion.main>
   );
 }

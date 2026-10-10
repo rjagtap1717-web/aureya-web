@@ -8,10 +8,10 @@ export default function ThePromise() {
   const inView = useInView(ref, { once: true, margin: '-15%' });
 
   const lines = [
-    { text: 'You feel it by', style: 'normal' },
-    { text: 'morning three.', style: 'italic accent' },
-    { text: 'Then you raise', style: 'normal' },
-    { text: 'your standard.', style: 'normal' },
+    { text: 'The limit is', style: 'normal' },
+    { text: 'biological.', style: 'italic accent' },
+    { text: 'We moved', style: 'normal' },
+    { text: 'the limit.', style: 'normal' },
   ];
 
   return (
@@ -56,7 +56,7 @@ export default function ThePromise() {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="mt-16 font-sans text-sm leading-relaxed tracking-wide text-foreground/50 max-w-xs"
         >
-          Cordyceps Militaris. 98.3% polysaccharide purity. Third-party verified. Encapsulated in borosilicate glass — not plastic.
+          Pure Cordyceps militaris, engineered to elevate your daily baseline and restore sustained, jitter-free cellular energy.
         </motion.p>
       </div>
     </section>

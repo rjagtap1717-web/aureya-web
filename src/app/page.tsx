@@ -6,9 +6,9 @@ import ClosingCTA from '@/components/ClosingCTA';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'AUREYA | The Absolute Standard in Cordyceps',
+  title: 'YORA | Do What Is Right',
   description:
-    'Aureya Cordyceps Militaris — 98.3% polysaccharide purity, third-party verified, encapsulated in borosilicate glass. The cellular reset begins here.',
+    'Yora Cordyceps militaris. 98.3% polysaccharide purity, third-party verified, hermetically sealed for ultimate freshness. Your cellular reset begins here.',
 };
 
 export default function HomePage() {
@@ -31,7 +31,7 @@ export default function HomePage() {
 
       {/* Footer */}
       <footer className="w-full py-12 px-6 lg:px-24 flex flex-col md:flex-row items-center justify-between border-t border-foreground/5 font-sans text-xs tracking-widest uppercase text-foreground/30">
-        <span>© {new Date().getFullYear()} AUREYA. All rights reserved.</span>
+        <span>© {new Date().getFullYear()} YORA. All rights reserved.</span>
         <div className="flex gap-8 mt-4 md:mt-0">
           <a href="#" className="hover:text-foreground transition-colors duration-300">Terms</a>
           <a href="#" className="hover:text-foreground transition-colors duration-300">Privacy</a>
