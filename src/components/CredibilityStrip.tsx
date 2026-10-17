@@ -4,9 +4,9 @@ import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 
 const facts = [
-  { value: '98.3%', label: 'Polysaccharide Purity' },
+  { value: '12.75 mg/g', label: 'Cordycepin Potency' },
   { value: '3rd Party', label: 'Lab Verified COA' },
-  { value: 'Borosilicate', label: 'Zero-Leach Glass' },
+  { value: 'Food-Grade', label: 'BPA-Free PET Bottle' },
   { value: 'India Made', label: 'GMP Certified Facility' },
 ];
 

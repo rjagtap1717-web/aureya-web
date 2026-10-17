@@ -37,7 +37,7 @@ export default function SciencePage() {
           <div>
             <h2 className="font-serif text-3xl mb-6">The Compound</h2>
             <p className="font-sans text-sm leading-relaxed text-foreground/70 mb-6">
-              Yora uses only cultivated Cordyceps militaris, grown in strictly controlled environments. Wild cordyceps can be incredibly inconsistent, but our strain guarantees 98.3% polysaccharide purity every single time.
+              Yora uses only cultivated Cordyceps militaris, grown in strictly controlled environments. Wild cordyceps can be incredibly inconsistent, but our strain guarantees a verified 12.75 mg/g cordycepin potency and standardized active bioactives every single time.
             </p>
             <p className="font-sans text-sm leading-relaxed text-foreground/70">
               The primary active molecule, Cordycepin (3'-deoxyadenosine), directly interacts with your cellular ATP cycle.
@@ -79,24 +79,24 @@ export default function SciencePage() {
               <div>
                 <h3 className="font-serif text-xl text-accent mb-2">Maximum Bioavailability</h3>
                 <p className="font-sans text-sm leading-relaxed opacity-70">
-                  98.3% active polysaccharide purity—delivering higher potency per dose than standard commercial extracts.
+                  Lab-verified 12.75 mg/g cordycepin potency alongside active beta-glucans and polysaccharides, delivering clinical-grade efficacy confirmed through rigorous HPLC testing.
                 </p>
               </div>
               
               <div>
                 <h3 className="font-serif text-xl text-accent mb-2">Potency Preservation</h3>
                 <p className="font-sans text-sm leading-relaxed opacity-70">
-                  Freshness-locked in premium UV-protective packaging to ensure the active compounds remain at absolute peak efficacy from the first capsule to the last.
+                  Freshness-locked in food-grade, BPA-free PET packaging to ensure the active compounds remain at absolute peak efficacy from the first capsule to the last.
                 </p>
               </div>
               
               <div>
                 <h3 className="font-serif text-xl text-accent mb-2">Absolute Transparency</h3>
                 <p className="font-sans text-sm leading-relaxed opacity-70 mb-6">
-                  Every batch is rigorously third-party tested for heavy metals, microbial contaminants, and precise active compound verification.
+                  Every batch is rigorously third-party tested for active compounds, purity levels, and heavy metals.
                 </p>
                 <a href="/latestcordyreport" target="_blank" rel="noopener noreferrer" className="inline-block font-sans text-xs tracking-widest uppercase border border-background/20 px-8 py-4 hover:bg-background hover:text-foreground transition-all duration-300">
-                  Download Latest COA (PDF)
+                  View Latest Lab COA
                 </a>
               </div>
             </div>
@@ -104,10 +104,45 @@ export default function SciencePage() {
           
           <div className="hidden lg:flex w-64 h-64 border-4 border-background/10 rounded-full items-center justify-center relative shrink-0 mt-8">
             <div className="absolute inset-0 border border-accent rounded-full animate-[spin_10s_linear_infinite]" />
-            <div className="text-center">
-              <span className="font-serif text-4xl text-accent block">98.3%</span>
-              <span className="font-sans text-[10px] tracking-widest uppercase opacity-50 mt-2 block">Purity Threshold</span>
+            <div className="text-center px-4">
+              <span className="font-serif text-3xl text-accent block">12.75 mg/g</span>
+              <span className="font-sans text-[10px] tracking-widest uppercase opacity-50 mt-2 block">Cordycepin Potency</span>
             </div>
+          </div>
+        </motion.div>
+
+        {/* Third-Party Analytical Breakdown Table */}
+        <motion.div variants={itemVariants} className="mt-24">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 pb-4 border-b border-foreground/10 gap-4">
+            <div>
+              <p className="font-sans text-xs tracking-[0.3em] uppercase text-accent mb-2">HPLC Verified</p>
+              <h3 className="font-serif text-2xl">Official Certificate of Analysis (COA)</h3>
+            </div>
+            <p className="font-sans text-xs text-foreground/50">
+              Tested by Opal Research & Analytical Services • ISO 9001 / 14001 / 45001 Certified
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+            {[
+              { parameter: 'Cordycepin Content', value: '12.75 mg/g', protocol: 'HPLC', highlight: true },
+              { parameter: 'Beta-Glucans', value: '4.85%', protocol: 'HPLC', highlight: false },
+              { parameter: 'Active Polysaccharides', value: '4.17%', protocol: 'ITS/LAB/SOP', highlight: false },
+              { parameter: 'Adenosine Content', value: '2.84 mg/g', protocol: 'HPLC', highlight: false },
+            ].map((item, idx) => (
+              <div 
+                key={idx}
+                className={`p-6 border transition-colors ${
+                  item.highlight 
+                    ? 'border-accent/40 bg-accent/5' 
+                    : 'border-foreground/10 bg-foreground/[0.02]'
+                }`}
+              >
+                <span className="font-sans text-[10px] tracking-widest uppercase text-foreground/40 block mb-2">{item.protocol}</span>
+                <span className="font-serif text-2xl text-accent block mb-1">{item.value}</span>
+                <span className="font-sans text-xs text-foreground/70">{item.parameter}</span>
+              </div>
+            ))}
           </div>
         </motion.div>
 

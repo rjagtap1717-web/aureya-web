@@ -7,7 +7,7 @@ const benefits = [
   {
     glyph: '⚡',
     title: 'ATP Energy',
-    desc: 'Elevates cellular energy production at the mitochondrial level for sustained, crash-free output.',
+    desc: 'Elevates cellular energy production at the mitochondrial level for clean, sustained output without crashes.',
   },
   {
     glyph: '🛡',
@@ -17,12 +17,12 @@ const benefits = [
   {
     glyph: '◈',
     title: 'Cognitive Clarity',
-    desc: 'Improves cerebral blood flow and reduces mental fatigue — sharper thinking, longer.',
+    desc: 'Improves cerebral blood flow and reduces mental fatigue for sharper, sustained focus.',
   },
   {
     glyph: '≋',
     title: 'Cortisol Control',
-    desc: 'Adaptogenic compounds modulate the HPA axis, lowering stress response over 30 days.',
+    desc: 'Adaptogenic compounds modulate the HPA axis, helping lower your stress response over 30 days.',
   },
   {
     glyph: '○',
@@ -32,7 +32,7 @@ const benefits = [
   {
     glyph: '∞',
     title: 'Cellular Longevity',
-    desc: 'Activates AMPK pathways — the same cellular switch targeted by leading longevity research.',
+    desc: 'Activates AMPK pathways, the key cellular mechanism highlighted in longevity science.',
   },
 ];
 

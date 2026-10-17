@@ -42,7 +42,7 @@ export default function AboutPage() {
             <h2 className="font-serif text-3xl mb-8">A Note on Intent</h2>
             <div className="font-sans text-sm leading-loose text-foreground/70 space-y-6">
               <p>
-                The wellness industry is flooded with mycelium grown on grain—mostly starch, devoid of active compounds, packaged in cheap plastic that degrades whatever potency remains.
+                The wellness industry is flooded with mycelium grown on grain—mostly starch, devoid of active compounds, packaged in unsealed, low-grade containers that degrade whatever potency remains.
               </p>
               <p>
                 We grew tired of the dilution. We wanted the pure fruiting body. We wanted a clinical dose. We wanted a vessel that respected the molecule.

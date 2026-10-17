@@ -8,7 +8,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'YORA | Do What Is Right',
   description:
-    'Yora Cordyceps militaris. 98.3% polysaccharide purity, third-party verified, hermetically sealed for ultimate freshness. Your cellular reset begins here.',
+    'Yora Cordyceps militaris. Lab-verified 12.75 mg/g cordycepin potency, 100% pure fruiting body, third-party tested and sealed for ultimate freshness. Your cellular reset begins here.',
 };
 
 export default function HomePage() {
