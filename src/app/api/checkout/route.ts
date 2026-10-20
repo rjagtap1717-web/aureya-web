@@ -7,8 +7,8 @@ const razorpay = new Razorpay({
 });
 
 const PRICES = {
-  'variant-a': 2500, // 20 Capsules - 2500 INR
-  'variant-b': 6500, // 60 Capsules - 6500 INR
+  'variant-a': 999, // 30 Capsules - 999 INR
+  'variant-b': 1499, // 60 Capsules - 1499 INR
 };
 
 export async function POST(req: Request) {

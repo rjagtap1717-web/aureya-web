@@ -9,8 +9,8 @@ export default function ShopPage() {
   const [variant, setVariant] = useState<'variant-a' | 'variant-b'>('variant-a');
 
   const pricing = {
-    'variant-a': { price: '₹2,500', label: 'The Discovery Ritual', size: '30 Capsules' },
-    'variant-b': { price: '₹6,500', label: 'The Cellular Reset', size: '60 Capsules' },
+    'variant-a': { price: '₹999', label: 'The Discovery Ritual', size: '30 Capsules' },
+    'variant-b': { price: '₹1,499', label: 'The Cellular Reset', size: '60 Capsules' },
   };
 
   return (
@@ -27,24 +27,23 @@ export default function ShopPage() {
 
         <div className="flex flex-col lg:flex-row gap-16 items-start">
           {/* Visual Asset Side */}
-          <div className="flex-1 w-full flex items-center justify-center bg-foreground/5 rounded-2xl aspect-square md:aspect-auto md:h-[600px] relative overflow-hidden">
+          <div className="flex-1 w-full flex items-center justify-center bg-foreground/5 rounded-2xl aspect-[3/4] md:aspect-auto md:h-[600px] relative overflow-hidden border border-foreground/10 shadow-2xl">
             <AnimatePresence mode="wait">
               <motion.img
                 key={variant}
-                src="/jar.jfif"
+                src="/cordybotmkup.jpeg"
                 alt="Yora Cordyceps Capsules"
-                initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ 
                   opacity: 1, 
-                  scale: variant === 'variant-a' ? 0.9 : 1.1,
-                  y: 0 
+                  scale: variant === 'variant-a' ? 0.98 : 1.05,
                 }}
-                exit={{ opacity: 0, scale: 0.9, y: -20 }}
-                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                className="w-[80%] max-w-[400px] h-auto object-contain z-10 drop-shadow-2xl"
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                className="w-full h-full object-cover rounded-2xl"
               />
             </AnimatePresence>
-            <div className="absolute inset-0 bg-gradient-to-tr from-accent/5 to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent pointer-events-none" />
           </div>
 
           {/* Checkout Side */}

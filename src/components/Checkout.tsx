@@ -33,7 +33,7 @@ export default function Checkout({ variant }: CheckoutProps) {
         amount: order.amount,
         currency: order.currency,
         name: 'YORA',
-        description: variant === 'variant-a' ? 'The Discovery Ritual (20 Capsules)' : 'The Cellular Reset (60 Capsules)',
+        description: variant === 'variant-a' ? 'The Discovery Ritual (30 Capsules)' : 'The Cellular Reset (60 Capsules)',
         order_id: order.orderId,
         handler: async function (response: any) {
           const verifyRes = await fetch('/api/verify', {

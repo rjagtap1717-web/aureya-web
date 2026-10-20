@@ -9,6 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 export default function HeroCanvas() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const bottleRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -28,50 +29,27 @@ export default function HeroCanvas() {
 
     // Particle system
     const particles: any[] = [];
-    const numParticles = 800;
+    const numParticles = 700;
     
     for (let i = 0; i < numParticles; i++) {
       particles.push({
         x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height * 2 - canvas.height, // Spread out initially
+        y: Math.random() * canvas.height * 2 - canvas.height,
         size: Math.random() * 2 + 0.5,
-        targetX: canvas.width / 2 + (Math.random() - 0.5) * 60,
-        targetY: canvas.height / 2 + (Math.random() - 0.5) * 150,
-        color: `rgba(216, 170, 83, ${Math.random() * 0.8 + 0.2})`, // Amber powder
+        targetX: canvas.width / 2 + (Math.random() - 0.5) * 160,
+        targetY: canvas.height / 2 + (Math.random() - 0.5) * 220,
+        color: `rgba(216, 170, 83, ${Math.random() * 0.7 + 0.3})`, // Amber powder
         progress: 0,
       });
     }
 
-    let jarAlpha = { value: 0 };
-    let jarY = { value: canvas.height / 2 + 100 };
-
     const render = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      // Draw jar base
-      if (jarAlpha.value > 0.01) {
-        ctx.save();
-        ctx.globalAlpha = jarAlpha.value;
-        ctx.fillStyle = '#111';
-        // Jar Body
-        ctx.beginPath();
-        ctx.roundRect(canvas.width / 2 - 80, jarY.value, 160, 200, 20);
-        ctx.fill();
-        // Gold Cap
-        ctx.fillStyle = '#d8aa53';
-        ctx.beginPath();
-        ctx.roundRect(canvas.width / 2 - 70, jarY.value - 40, 140, 40, 10);
-        ctx.fill();
-        
-        ctx.restore();
-      }
 
       // Draw particles
       particles.forEach(p => {
         const currentX = p.x + (p.targetX - p.x) * p.progress;
-        // The Y target goes down as it drops into the jar
-        const finalY = jarY.value + 40 + Math.random() * 120;
-        const currentY = p.y + (finalY - p.y) * p.progress;
+        const currentY = p.y + (p.targetY - p.y) * p.progress;
 
         ctx.fillStyle = p.color;
         ctx.beginPath();
@@ -85,31 +63,29 @@ export default function HeroCanvas() {
       scrollTrigger: {
         trigger: container,
         start: "top top",
-        end: "+=2000", // 2000px of scrolling for the animation
+        end: "+=1600",
         scrub: 1,
         pin: true,
       }
     });
 
-    // Phase 1: Particles coalesce into capsule shape
+    // Particles coalesce toward the bottle
     tl.to(particles, {
-      progress: 0.6,
-      duration: 1,
+      progress: 1,
+      duration: 1.5,
       ease: "power2.inOut",
       onUpdate: render
     });
 
-    // Phase 2: Jar appears, capsule drops in
-    tl.to(jarAlpha, { value: 1, duration: 0.5 }, "-=0.2");
-    tl.to(particles, {
-      progress: 1,
-      duration: 1,
-      ease: "power4.in",
-      onUpdate: render
-    }, "-=0.3");
-
-    // Phase 3: Final settle
-    tl.to(jarY, { value: canvas.height / 2, duration: 0.5, ease: "back.out(1.2)", onUpdate: render });
+    // Bottle gentle floating zoom
+    if (bottleRef.current) {
+      tl.to(bottleRef.current, {
+        scale: 1.06,
+        y: -10,
+        duration: 1.5,
+        ease: "power1.out",
+      }, 0);
+    }
 
     // Initial render
     render();
@@ -121,14 +97,43 @@ export default function HeroCanvas() {
   }, []);
 
   return (
-    <div ref={containerRef} className="relative w-full h-[100dvh] bg-transparent z-0">
-      <canvas ref={canvasRef} className="absolute inset-0 pointer-events-none" />
-      <div className="absolute inset-0 flex flex-col items-center justify-start pt-32 pointer-events-none z-10 mix-blend-difference text-white">
-        <img src="/yora-logo.png" alt="YORA" className="h-16 md:h-24 lg:h-32 object-contain opacity-80" />
+    <div ref={containerRef} className="relative w-full h-[100dvh] bg-transparent z-0 overflow-hidden flex flex-col items-center justify-center">
+      {/* Ambient Particle Canvas */}
+      <canvas ref={canvasRef} className="absolute inset-0 pointer-events-none z-0" />
+
+      {/* Top Logo */}
+      <div className="absolute top-10 md:top-14 flex flex-col items-center pointer-events-none z-20 mix-blend-difference text-white">
+        <img src="/yora-logo.png" alt="YORA" className="h-12 md:h-16 lg:h-20 object-contain opacity-90" />
       </div>
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-xs font-sans tracking-widest uppercase opacity-50 flex flex-col items-center animate-pulse">
+
+      {/* Hero Centerpiece Bottle */}
+      <div 
+        ref={bottleRef} 
+        className="relative z-10 flex flex-col items-center pointer-events-none mt-12 md:mt-16"
+      >
+        <div className="relative w-44 sm:w-52 md:w-60 lg:w-68 aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl border border-foreground/10 ring-1 ring-accent/30 bg-foreground/5 backdrop-blur-sm">
+          <img 
+            src="/cordybotmkup.jpeg" 
+            alt="YORA Cordyceps Capsules" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-background/30 via-transparent to-transparent pointer-events-none" />
+        </div>
+        
+        {/* Specs pill badge */}
+        <div className="mt-4 flex items-center gap-3 px-4 py-1.5 rounded-full bg-foreground/5 backdrop-blur-md border border-foreground/10 text-[10px] md:text-xs font-sans tracking-widest uppercase text-foreground/70">
+          <span>600mg</span>
+          <span className="w-1 h-1 rounded-full bg-accent" />
+          <span>Veg. Capsules</span>
+          <span className="w-1 h-1 rounded-full bg-accent" />
+          <span>12.75 mg/g Cordycepin</span>
+        </div>
+      </div>
+
+      {/* Bottom Scroll Cue */}
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-xs font-sans tracking-widest uppercase opacity-40 flex flex-col items-center animate-pulse pointer-events-none z-20">
         <span>Scroll to Experience</span>
-        <div className="w-[1px] h-12 bg-current mt-2" />
+        <div className="w-[1px] h-8 bg-current mt-2" />
       </div>
     </div>
   );
