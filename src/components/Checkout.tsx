@@ -32,7 +32,7 @@ export default function Checkout({ variant }: CheckoutProps) {
         key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID || 'rzp_test_mock',
         amount: order.amount,
         currency: order.currency,
-        name: 'YORA',
+        name: 'yora',
         description: variant === 'variant-a' ? 'The Discovery Ritual (30 Capsules)' : 'The Cellular Reset (60 Capsules)',
         order_id: order.orderId,
         handler: async function (response: any) {

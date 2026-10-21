@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 export default function HeroCanvas() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const bottleRef = useRef<HTMLDivElement>(null);
+  const logoRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -36,8 +36,8 @@ export default function HeroCanvas() {
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height * 2 - canvas.height,
         size: Math.random() * 2 + 0.5,
-        targetX: canvas.width / 2 + (Math.random() - 0.5) * 160,
-        targetY: canvas.height / 2 + (Math.random() - 0.5) * 220,
+        targetX: canvas.width / 2 + (Math.random() - 0.5) * 140,
+        targetY: canvas.height / 2 - 30 + (Math.random() - 0.5) * 140,
         color: `rgba(216, 170, 83, ${Math.random() * 0.7 + 0.3})`, // Amber powder
         progress: 0,
       });
@@ -69,7 +69,7 @@ export default function HeroCanvas() {
       }
     });
 
-    // Particles coalesce toward the bottle
+    // Particles coalesce toward the logo center
     tl.to(particles, {
       progress: 1,
       duration: 1.5,
@@ -77,10 +77,10 @@ export default function HeroCanvas() {
       onUpdate: render
     });
 
-    // Bottle gentle floating zoom
-    if (bottleRef.current) {
-      tl.to(bottleRef.current, {
-        scale: 1.06,
+    // Logo gentle floating zoom
+    if (logoRef.current) {
+      tl.to(logoRef.current, {
+        scale: 1.08,
         y: -10,
         duration: 1.5,
         ease: "power1.out",
@@ -101,33 +101,30 @@ export default function HeroCanvas() {
       {/* Ambient Particle Canvas */}
       <canvas ref={canvasRef} className="absolute inset-0 pointer-events-none z-0" />
 
-      {/* Top Logo */}
-      <div className="absolute top-10 md:top-14 flex flex-col items-center pointer-events-none z-20 mix-blend-difference text-white">
-        <img src="/yora-logo.png" alt="YORA" className="h-12 md:h-16 lg:h-20 object-contain opacity-90" />
-      </div>
-
-      {/* Hero Centerpiece Bottle */}
+      {/* Centerpiece Brand Logo - Seamlessly Blended */}
       <div 
-        ref={bottleRef} 
-        className="relative z-10 flex flex-col items-center pointer-events-none mt-12 md:mt-16"
+        ref={logoRef} 
+        className="relative z-10 flex flex-col items-center pointer-events-none px-6 text-center select-none"
       >
-        <div className="relative w-44 sm:w-52 md:w-60 lg:w-68 aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl border border-foreground/10 ring-1 ring-accent/30 bg-foreground/5 backdrop-blur-sm">
-          <img 
-            src="/cordybotmkup.jpeg" 
-            alt="YORA Cordyceps Capsules" 
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-background/30 via-transparent to-transparent pointer-events-none" />
-        </div>
-        
-        {/* Specs pill badge */}
-        <div className="mt-4 flex items-center gap-3 px-4 py-1.5 rounded-full bg-foreground/5 backdrop-blur-md border border-foreground/10 text-[10px] md:text-xs font-sans tracking-widest uppercase text-foreground/70">
-          <span>600mg</span>
-          <span className="w-1 h-1 rounded-full bg-accent" />
-          <span>Veg. Capsules</span>
-          <span className="w-1 h-1 rounded-full bg-accent" />
-          <span>12.75 mg/g Cordycepin</span>
-        </div>
+        {/* Soft ambient backlight */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 sm:w-96 md:w-[450px] h-72 sm:h-96 md:h-[450px] bg-accent/8 rounded-full blur-[90px] pointer-events-none" />
+
+        {/* Botanical Rosette Emblem */}
+        <img 
+          src="/yora-emblem.png" 
+          alt="yora emblem" 
+          className="w-24 sm:w-32 md:w-40 lg:w-48 h-auto object-contain transition-transform duration-700 drop-shadow-[0_4px_24px_rgba(45,106,79,0.35)]" 
+        />
+
+        {/* Wordmark */}
+        <h1 className="font-brand text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight lowercase text-foreground mt-4 md:mt-6">
+          yora
+        </h1>
+
+        {/* Tagline */}
+        <p className="mt-4 font-sans text-xs md:text-sm tracking-[0.35em] uppercase text-foreground/50">
+          Do What Is Right
+        </p>
       </div>
 
       {/* Bottom Scroll Cue */}

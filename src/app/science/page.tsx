@@ -33,23 +33,27 @@ export default function SciencePage() {
           <span className="italic text-foreground/70">Mitochondrial Optimization.</span>
         </motion.h1>
 
-        <motion.div variants={itemVariants} className="mt-24 grid grid-cols-1 md:grid-cols-2 gap-16">
-          <div>
-            <h2 className="font-serif text-3xl mb-6">The Compound</h2>
+        <motion.div variants={itemVariants} className="mt-24 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="lg:col-span-5">
+            <span className="font-sans text-xs tracking-[0.3em] uppercase text-accent mb-3 block">Mechanism of Action</span>
+            <h2 className="font-serif text-3xl md:text-4xl mb-6">The Compound</h2>
             <p className="font-sans text-sm leading-relaxed text-foreground/70 mb-6">
               Yora uses only cultivated Cordyceps militaris, grown in strictly controlled environments. Wild cordyceps can be incredibly inconsistent, but our strain guarantees a verified 12.75 mg/g cordycepin potency and standardized active bioactives every single time.
             </p>
-            <p className="font-sans text-sm leading-relaxed text-foreground/70">
+            <p className="font-sans text-sm leading-relaxed text-foreground/70 mb-6">
               The primary active molecule, Cordycepin (3'-deoxyadenosine), directly interacts with your cellular ATP cycle.
             </p>
-          </div>
-          <div className="bg-foreground/5 rounded-2xl aspect-square md:aspect-auto md:h-full p-8 flex items-center justify-center relative overflow-hidden">
-            {/* Placeholder for Mechanism Diagram */}
-            <div className="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1530213786676-415b699c2d15?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center mix-blend-overlay grayscale" />
-            <div className="text-center z-10">
-              <span className="font-serif text-lg text-foreground/50 tracking-widest block mb-4">MECHANISM OF ACTION</span>
-              <div className="h-[1px] w-12 bg-accent/50 mx-auto" />
+            <div className="p-4 rounded-xl bg-foreground/5 border border-foreground/10 text-xs font-sans text-foreground/60 leading-relaxed">
+              <span className="text-accent font-semibold block mb-1">Mitochondrial Up-regulation:</span>
+              Increases cellular oxygen uptake and accelerates ATP regeneration, delivering sustained daily energy without caffeine crashes.
             </div>
+          </div>
+          <div className="lg:col-span-7 rounded-2xl overflow-hidden border border-foreground/15 bg-black shadow-2xl relative group">
+            <img 
+              src="/Cellular%20Energetics_%20Before%20and%20After.png" 
+              alt="Cellular Energetics: Before and After Mechanism of Action" 
+              className="w-full h-auto object-contain rounded-2xl transition-transform duration-700 group-hover:scale-[1.01]"
+            />
           </div>
         </motion.div>
 

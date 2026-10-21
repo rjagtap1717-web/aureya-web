@@ -15,6 +15,11 @@
   --color-accent-light: var(--accent-light);
   --font-serif: var(--font-playfair);
   --font-sans: var(--font-inter);
+  --font-brand: var(--font-poppins);
+}
+
+.font-brand {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {

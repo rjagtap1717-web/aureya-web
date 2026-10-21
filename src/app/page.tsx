@@ -6,9 +6,9 @@ import ClosingCTA from '@/components/ClosingCTA';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'YORA | Do What Is Right',
+  title: 'yora | Do What Is Right',
   description:
-    'Yora Cordyceps militaris. Lab-verified 12.75 mg/g cordycepin potency, 100% pure fruiting body, third-party tested and sealed for ultimate freshness. Your cellular reset begins here.',
+    'yora Cordyceps militaris. Lab-verified 12.75 mg/g cordycepin potency, 100% pure fruiting body, third-party tested and sealed for ultimate freshness. Your cellular reset begins here.',
 };
 
 export default function HomePage() {
@@ -31,7 +31,13 @@ export default function HomePage() {
 
       {/* Footer */}
       <footer className="w-full py-12 px-6 lg:px-24 flex flex-col md:flex-row items-center justify-between border-t border-foreground/5 font-sans text-xs tracking-widest uppercase text-foreground/30">
-        <span>© {new Date().getFullYear()} YORA. All rights reserved.</span>
+        <span className="flex items-center gap-2">
+          © {new Date().getFullYear()}
+          <span className="inline-flex items-center gap-1.5 font-brand font-bold lowercase tracking-normal text-foreground/60 text-sm">
+            <img src="/yora-emblem.png" alt="yora" className="w-4 h-4 object-contain inline-block" />
+            yora
+          </span>. All rights reserved.
+        </span>
         <div className="flex gap-8 mt-4 md:mt-0">
           <a href="#" className="hover:text-foreground transition-colors duration-300">Terms</a>
           <a href="#" className="hover:text-foreground transition-colors duration-300">Privacy</a>

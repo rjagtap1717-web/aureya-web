@@ -38,9 +38,12 @@ export default function Navbar() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between h-16 md:h-20">
-          {/* Logo */}
-          <Link href="/" className="font-serif text-xl tracking-[0.3em] uppercase text-foreground hover:text-accent transition-colors duration-300">
-            YORA
+          {/* Logo Lockup */}
+          <Link href="/" className="flex items-center gap-2.5 group">
+            <img src="/yora-emblem.png" alt="yora logo" className="w-7 h-7 md:w-8 md:h-8 object-contain transition-transform duration-300 group-hover:rotate-12" />
+            <span className="font-brand text-2xl md:text-3xl font-bold tracking-tight lowercase text-foreground group-hover:text-accent transition-colors duration-300">
+              yora
+            </span>
           </Link>
 
           {/* Desktop Nav */}
