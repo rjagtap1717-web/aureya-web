@@ -9,9 +9,8 @@ import { Menu, X } from 'lucide-react';
 const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/science', label: 'The Science' },
-  { href: '/ritual', label: 'The Ritual' },
   { href: '/about', label: 'About' },
-  { href: '/reviews', label: 'Reviews' },
+  { href: '/shop', label: 'Shop' },
 ];
 
 export default function Navbar() {

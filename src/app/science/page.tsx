@@ -150,13 +150,64 @@ export default function SciencePage() {
           </div>
         </motion.div>
 
+        {/* Sourcing & Lab Footage Archive (Frosted Glass Placeholders) */}
+        <motion.div variants={itemVariants} className="mt-32">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 pb-4 border-b border-foreground/10 gap-4">
+            <div>
+              <p className="font-sans text-xs tracking-[0.3em] uppercase text-accent mb-2">Provenance</p>
+              <h3 className="font-serif text-2xl">Cleanroom Cultivation Archives</h3>
+            </div>
+            <p className="font-sans text-xs text-foreground/50">
+              Direct footage from certified partner mycology cleanrooms in India
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="p-8 rounded-2xl border border-foreground/10 bg-foreground/[0.02] relative overflow-hidden group">
+              <div className="flex items-center justify-between mb-6">
+                <span className="font-mono text-xs text-accent">ARCHIVE // 01</span>
+                <span className="text-[10px] font-sans tracking-widest uppercase px-3 py-1 rounded-full bg-accent/10 text-accent">Video Coming Soon</span>
+              </div>
+              <h4 className="font-serif text-2xl mb-3">Sterile Substrate & Inoculation</h4>
+              <p className="font-sans text-xs sm:text-sm text-foreground/60 leading-relaxed mb-6">
+                High-definition cleanroom walkthrough recording substrate sterilization and automated temperature-humidity regulation.
+              </p>
+              <div className="py-8 rounded-xl border border-dashed border-foreground/10 flex flex-col items-center justify-center text-foreground/40 bg-foreground/[0.01]">
+                <svg className="w-8 h-8 mb-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <polygon points="23 7 16 12 23 17 23 7" />
+                  <rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
+                </svg>
+                <span className="font-sans text-[11px] tracking-wider uppercase">Laboratory Video Archive</span>
+              </div>
+            </div>
+
+            <div className="p-8 rounded-2xl border border-foreground/10 bg-foreground/[0.02] relative overflow-hidden group">
+              <div className="flex items-center justify-between mb-6">
+                <span className="font-mono text-xs text-accent">ARCHIVE // 02</span>
+                <span className="text-[10px] font-sans tracking-widest uppercase px-3 py-1 rounded-full bg-accent/10 text-accent">Video Coming Soon</span>
+              </div>
+              <h4 className="font-serif text-2xl mb-3">HPLC Chromatography Run</h4>
+              <p className="font-sans text-xs sm:text-sm text-foreground/60 leading-relaxed mb-6">
+                Direct analytical spectrometer footage showing real-time peaks of active cordycepin (12.75 mg/g) and adenosine markers.
+              </p>
+              <div className="py-8 rounded-xl border border-dashed border-foreground/10 flex flex-col items-center justify-center text-foreground/40 bg-foreground/[0.01]">
+                <svg className="w-8 h-8 mb-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <polygon points="23 7 16 12 23 17 23 7" />
+                  <rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
+                </svg>
+                <span className="font-sans text-[11px] tracking-wider uppercase">Chromatography Data Archive</span>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
       </div>
 
-      <motion.div variants={itemVariants} className="mt-32 max-w-3xl mx-auto text-center">
+      <motion.div variants={itemVariants} className="mt-32 max-w-3xl mx-auto text-center px-6">
         <p className="font-sans text-xs tracking-[0.3em] uppercase text-foreground/40 mb-4">Zero Fillers</p>
         <h2 className="font-serif text-3xl mb-6">100% Fruiting Body Extract</h2>
         <p className="font-sans text-sm leading-relaxed text-foreground/70">
-          A lot of cordyceps supplements on the market are just mycelium grown on grain, which means you're mostly paying for inactive starch and oats. Yora uses nothing but 100% pure fruiting bodies. This gives you the absolute maximum concentration of active beta-glucans and cordycepin, without any cheap fillers.
+          A lot of cordyceps supplements on the market are just mycelium grown on grain, which means you&apos;re mostly paying for inactive starch and oats. Yora uses nothing but 100% pure fruiting bodies. This gives you the absolute maximum concentration of active beta-glucans and cordycepin, without any cheap fillers.
         </p>
       </motion.div>
     </motion.main>
