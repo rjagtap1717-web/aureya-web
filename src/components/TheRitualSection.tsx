@@ -14,8 +14,8 @@ const steps = [
   {
     time: '07:45 AM',
     title: 'Cellular Uptake',
-    desc: 'Wait 45 minutes before coffee or breakfast while bioactives absorb into systemic circulation.',
-    detail: 'Allows cordycepin to bind to adenosine receptors without caffeine competition.',
+    desc: 'Hydration and calm baseline breathing while bioactives absorb into systemic circulation without stimulant interference.',
+    detail: 'Allows cordycepin to bind cleanly to receptors, replacing chemical caffeine with authentic mitochondrial ATP.',
   },
   {
     time: '08:30 AM',

@@ -80,39 +80,30 @@ export default function AboutPage() {
             </div>
           </motion.div>
 
-          {/* Sourcing Visual - Frosted Glass Placeholder */}
-          <motion.div variants={itemVariants} className="lg:col-span-5 w-full aspect-[4/5] rounded-3xl relative overflow-hidden group border border-foreground/10 bg-foreground/[0.02] p-8 flex flex-col justify-between shadow-2xl">
-            <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-foreground/[0.04] pointer-events-none" />
-            <div className="absolute inset-0 bg-[radial-gradient(#ffffff0a_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none" />
+          {/* Editorial Product Vessel Showcase */}
+          <motion.div variants={itemVariants} className="lg:col-span-5 w-full aspect-[4/5] rounded-3xl relative overflow-hidden group border border-foreground/10 bg-gradient-to-b from-foreground/[0.03] to-foreground/[0.08] p-8 flex flex-col justify-between shadow-2xl">
+            <div className="absolute inset-0 bg-accent/5 rounded-full blur-3xl opacity-40 group-hover:opacity-60 transition-opacity duration-700 pointer-events-none" />
 
             <div className="relative z-10 flex items-center justify-between">
               <span className="font-sans text-[10px] tracking-widest uppercase text-foreground/40 font-mono">
-                Mycology Cleanroom
+                The Flagship
               </span>
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-accent/10 border border-accent/20 text-accent text-[10px] font-sans tracking-wider uppercase">
-                <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-                Partner Facility
+                First Edition
               </span>
             </div>
 
-            <div className="relative z-10 my-auto py-12 flex flex-col items-center justify-center text-center">
-              <div className="w-14 h-14 rounded-2xl bg-foreground/5 border border-foreground/10 flex items-center justify-center mb-4 text-foreground/40 group-hover:text-accent transition-colors">
-                <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <polygon points="23 7 16 12 23 17 23 7" />
-                  <rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
-                </svg>
-              </div>
-              <span className="font-sans text-xs tracking-widest uppercase text-foreground/70 font-medium">
-                Lab Footage Coming Soon
-              </span>
-              <span className="font-sans text-[11px] text-foreground/40 mt-1 max-w-xs">
-                Sterile substrate incubation and fruiting body harvest footage from certified Indian laboratories.
-              </span>
+            <div className="relative z-10 my-auto py-4 flex items-center justify-center">
+              <img
+                src="/cordybotmkup.jpeg"
+                alt="Yora Cordyceps Luxury Bottle"
+                className="w-full max-h-[320px] object-contain filter drop-shadow-[0_16px_32px_rgba(0,0,0,0.5)] transition-transform duration-700 group-hover:scale-105"
+              />
             </div>
 
-            <div className="relative z-10 pt-4 border-t border-foreground/5 flex items-center justify-between text-xs font-sans text-foreground/40">
-              <span>Standard: Class 100 Cleanroom</span>
-              <span className="text-accent font-mono text-[11px]">100% Fruiting Body</span>
+            <div className="relative z-10 pt-4 border-t border-foreground/5 flex items-center justify-between text-xs font-sans text-foreground/50">
+              <span>Standardized 12.75 mg/g</span>
+              <span className="text-accent font-mono text-[11px]">100% Pure Fruiting Body</span>
             </div>
           </motion.div>
 

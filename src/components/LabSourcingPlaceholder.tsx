@@ -1,116 +1,227 @@
 'use client';
 
-import { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { useState, useRef } from 'react';
+import { motion, AnimatePresence, useInView } from 'framer-motion';
 
-const archives = [
+const slides = [
   {
-    title: 'Sterile Cultivation Lab',
-    badge: 'Facility Footage Coming Soon',
-    category: 'Controlled Mycology',
-    desc: 'Sterile cleanroom incubation under monitored microclimates to ensure consistent mushroom fruiting body development.',
+    category: 'ENVIRONMENT',
+    title: 'Class 100 Mycology Cleanrooms',
+    desc: 'Sterile microclimates regulating humidity, air filtration, and organic substrates for pure fruiting bodies.',
+    status: 'Cleanroom Archive Coming Soon',
+    badge: 'ISO Class 5 // Sterile Air',
+    gradient: 'from-emerald-950/60 via-background/90 to-black',
   },
   {
-    title: 'HPLC Chromatography Testing',
-    badge: 'Video Archive Coming Soon',
-    category: 'Analytical Verification',
-    desc: 'Precision high-performance liquid chromatography verifying exact 12.75 mg/g cordycepin yield before extraction.',
+    category: 'ANALYTICAL CHEMISTRY',
+    title: 'HPLC Chromatography Laboratory',
+    desc: 'High-performance liquid chromatography testing verifying standardized 12.75 mg/g cordycepin potency in every batch.',
+    status: 'Spectrometry Video Archive Coming Soon',
+    badge: '12.75 mg/g Standardized',
+    gradient: 'from-amber-950/50 via-background/90 to-black',
   },
   {
-    title: 'Hermetic Clean Packaging',
-    badge: 'Lab Documentation Coming Soon',
-    category: 'Bioactive Preservation',
-    desc: 'BPA-free light-shielded vessels induction-sealed immediately to protect sensitive active compounds against oxidation.',
+    category: 'BIOACTIVE INTEGRITY',
+    title: 'Hermetic Induction Sealing',
+    desc: 'BPA-free light-shielded vessels induction-sealed immediately post-encapsulation to prevent oxidative potency loss.',
+    status: 'Packaging Line Footage Coming Soon',
+    badge: 'Oxygen & Moisture Barrier',
+    gradient: 'from-neutral-900/70 via-background/90 to-black',
+  },
+  {
+    category: 'EXTRACTION PURITY',
+    title: 'Zero-Grain Fruiting Harvest',
+    desc: '100% pure mature fruiting bodies harvested by hand without mycelial starch or agricultural fillers.',
+    status: 'Harvest Archive Coming Soon',
+    badge: '100% Pure Fruiting Body',
+    gradient: 'from-emerald-950/50 via-amber-950/30 to-black',
   },
 ];
 
 export default function LabSourcingPlaceholder() {
+  const [current, setCurrent] = useState(0);
+  const [direction, setDirection] = useState(1);
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: '-10%' });
 
+  const nextSlide = () => {
+    setDirection(1);
+    setCurrent((prev) => (prev + 1) % slides.length);
+  };
+
+  const prevSlide = () => {
+    setDirection(-1);
+    setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
+  };
+
+  const slide = slides[current];
+
+  const variants = {
+    enter: (dir: number) => ({
+      x: dir > 0 ? 80 : -80,
+      opacity: 0,
+      scale: 0.98,
+    }),
+    center: {
+      x: 0,
+      opacity: 1,
+      scale: 1,
+      transition: {
+        x: { type: 'spring' as const, stiffness: 280, damping: 28 },
+        opacity: { duration: 0.45 },
+        scale: { duration: 0.45 },
+      },
+    },
+    exit: (dir: number) => ({
+      x: dir > 0 ? -80 : 80,
+      opacity: 0,
+      scale: 0.98,
+      transition: {
+        x: { type: 'spring' as const, stiffness: 280, damping: 28 },
+        opacity: { duration: 0.35 },
+      },
+    }),
+  };
+
   return (
     <section ref={ref} className="relative w-full py-28 md:py-36 px-6 lg:px-24 bg-background border-t border-foreground/5 overflow-hidden">
-      {/* Background soft glow */}
-      <div className="absolute bottom-0 left-1/3 w-96 h-96 bg-accent/4 rounded-full blur-[150px] pointer-events-none" />
+      {/* Background ambient lighting */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-accent/4 rounded-full blur-[180px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center max-w-3xl mx-auto mb-20 md:mb-24">
+      <div className="max-w-6xl mx-auto">
+        {/* Editorial Header matching Reference UI */}
+        <div className="text-center max-w-2xl mx-auto mb-16 md:mb-20">
           <motion.p
             initial={{ opacity: 0, y: 15 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
-            className="font-sans text-xs tracking-[0.3em] uppercase text-accent mb-4"
+            className="font-sans text-[11px] sm:text-xs tracking-[0.35em] uppercase text-accent mb-3 block font-medium"
           >
-            Sourcing & Cultivation
+            Sanctuary of Science
           </motion.p>
+
           <motion.h2
-            initial={{ opacity: 0, y: 25 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            className="font-serif text-4xl sm:text-5xl md:text-6xl text-foreground leading-tight"
-          >
-            Inside the Laboratory. <br />
-            <span className="italic text-foreground/60">Strictly verified origins.</span>
-          </motion.h2>
-          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="font-sans text-sm md:text-base text-foreground/60 mt-6 max-w-xl mx-auto leading-relaxed"
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="font-serif text-4xl sm:text-5xl md:text-6xl text-foreground font-normal tracking-tight"
           >
-            We partner with certified mycology cleanrooms in India. Direct lab footage, batch records, and chromatography footage are being cataloged for public inspection.
+            Gallery
+          </motion.h2>
+
+          {/* Golden accent bar underline */}
+          <motion.div
+            initial={{ scaleX: 0 }}
+            animate={inView ? { scaleX: 1 } : {}}
+            transition={{ duration: 0.8, delay: 0.25 }}
+            className="w-12 h-[2px] bg-accent mx-auto mt-4"
+          />
+
+          <motion.p
+            initial={{ opacity: 0, y: 15 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="font-sans text-xs sm:text-sm text-foreground/50 mt-6 max-w-md mx-auto leading-relaxed"
+          >
+            Inside our partner mycology laboratories in India. Sterile cleanroom cultivation, chromatography quantification, and bioactive preservation.
           </motion.p>
         </div>
 
-        {/* 3 Frosted-Glass Placeholder Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {archives.map((item, i) => (
-            <motion.div
-              key={item.title}
-              initial={{ opacity: 0, y: 30 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.2 + i * 0.15, ease: [0.16, 1, 0.3, 1] }}
-              className="relative rounded-3xl overflow-hidden border border-foreground/10 bg-foreground/[0.02] p-8 flex flex-col justify-between group hover:border-accent/40 transition-all duration-500 min-h-[380px]"
-            >
-              {/* Frosted Glass Background with Subtle Grid Pattern */}
-              <div className="absolute inset-0 bg-gradient-to-br from-foreground/[0.04] to-transparent pointer-events-none" />
-              <div className="absolute inset-0 bg-[radial-gradient(#ffffff0a_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none" />
+        {/* Gallery Slider Card */}
+        <div className="relative w-full max-w-5xl mx-auto">
+          <div className="relative w-full h-[360px] sm:h-[420px] md:h-[460px] rounded-[28px] md:rounded-[36px] overflow-hidden border border-foreground/15 bg-neutral-950 shadow-2xl">
+            <AnimatePresence mode="wait" custom={direction}>
+              <motion.div
+                key={current}
+                custom={direction}
+                variants={variants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                className={`absolute inset-0 bg-gradient-to-br ${slide.gradient} p-8 sm:p-12 md:p-16 flex flex-col justify-between`}
+              >
+                {/* Subtle technical background grid */}
+                <div className="absolute inset-0 bg-[radial-gradient(#ffffff08_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none" />
 
-              {/* Status Header */}
-              <div className="relative z-10">
-                <div className="flex items-center justify-between mb-8">
-                  <span className="font-sans text-[10px] tracking-widest uppercase text-foreground/40 font-mono">
-                    {item.category}
+                {/* Card Top: Status / Badges */}
+                <div className="relative z-10 flex items-center justify-between">
+                  <span className="font-mono text-[10px] sm:text-xs tracking-widest uppercase text-foreground/40">
+                    Archive // 0{current + 1}
                   </span>
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-accent/10 border border-accent/20 text-accent text-[10px] font-sans tracking-wider uppercase">
+                  <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-accent text-[10px] sm:text-xs font-sans tracking-wider uppercase">
                     <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-                    Archive In Prep
-                  </span>
+                    <span>{slide.badge}</span>
+                  </div>
                 </div>
 
-                <h3 className="font-serif text-2xl text-foreground mb-4 group-hover:text-accent transition-colors duration-300">
-                  {item.title}
-                </h3>
-                <p className="font-sans text-xs sm:text-sm text-foreground/60 leading-relaxed">
-                  {item.desc}
-                </p>
-              </div>
+                {/* Card Center: Visual Placeholder Glyph */}
+                <div className="relative z-10 my-auto flex items-center justify-center">
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full border border-foreground/10 bg-foreground/[0.03] backdrop-blur-md flex items-center justify-center text-foreground/30 hover:text-accent hover:border-accent/40 transition-colors">
+                    <svg className="w-8 h-8 sm:w-10 sm:h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2">
+                      <polygon points="23 7 16 12 23 17 23 7" />
+                      <rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
+                    </svg>
+                  </div>
+                </div>
 
-              {/* Frosted Glass Visual Placeholder Area */}
-              <div className="relative z-10 mt-8 pt-6 border-t border-foreground/5 flex flex-col items-center justify-center py-8 rounded-2xl bg-foreground/[0.02] border border-dashed border-foreground/10 group-hover:border-accent/30 transition-colors">
-                <svg className="w-8 h-8 text-foreground/30 mb-3 group-hover:text-accent/60 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <polygon points="23 7 16 12 23 17 23 7" />
-                  <rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
-                </svg>
-                <span className="font-sans text-[11px] tracking-widest uppercase text-foreground/50">
-                  {item.badge}
-                </span>
-                <span className="font-sans text-[9px] text-foreground/30 mt-1">
-                  Partner Cleanroom Documentation
-                </span>
-              </div>
-            </motion.div>
-          ))}
+                {/* Card Bottom: Overlay text matching Image 1 layout */}
+                <div className="relative z-10 max-w-2xl">
+                  <span className="font-sans text-[10px] sm:text-xs tracking-[0.25em] uppercase text-accent font-semibold block mb-2">
+                    {slide.category}
+                  </span>
+                  <h3 className="font-serif text-2xl sm:text-3xl md:text-4xl text-foreground font-normal tracking-tight mb-3">
+                    {slide.title}
+                  </h3>
+                  <p className="font-sans text-xs sm:text-sm text-foreground/70 leading-relaxed max-w-xl">
+                    {slide.desc}
+                  </p>
+                  <span className="font-sans text-[10px] sm:text-[11px] text-foreground/40 tracking-wider uppercase block mt-3 font-mono">
+                    {slide.status}
+                  </span>
+                </div>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
+          {/* Navigation Controls Below the Card matching Image 1 */}
+          <div className="mt-8 flex items-center justify-center gap-4">
+            <button
+              onClick={prevSlide}
+              aria-label="Previous Slide"
+              className="w-11 h-11 rounded-full border border-foreground/20 bg-background/50 hover:bg-foreground hover:text-background hover:border-foreground text-foreground/70 flex items-center justify-center transition-all duration-300"
+            >
+              <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <polyline points="15 18 9 12 15 6" />
+              </svg>
+            </button>
+
+            {/* Slide Dots / Counter */}
+            <div className="flex items-center gap-2 px-3">
+              {slides.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => {
+                    setDirection(i > current ? 1 : -1);
+                    setCurrent(i);
+                  }}
+                  aria-label={`Go to slide ${i + 1}`}
+                  className={`h-1.5 rounded-full transition-all duration-300 ${
+                    current === i ? 'w-6 bg-accent' : 'w-1.5 bg-foreground/20 hover:bg-foreground/40'
+                  }`}
+                />
+              ))}
+            </div>
+
+            <button
+              onClick={nextSlide}
+              aria-label="Next Slide"
+              className="w-11 h-11 rounded-full border border-foreground/20 bg-background/50 hover:bg-foreground hover:text-background hover:border-foreground text-foreground/70 flex items-center justify-center transition-all duration-300"
+            >
+              <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <polyline points="9 18 15 12 9 6" />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </section>

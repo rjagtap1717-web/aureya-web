@@ -350,17 +350,17 @@ export default function HeroCanvas() {
         />
 
         {/* Wordmark */}
-        <h1 className="font-brand text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight lowercase text-foreground mt-3 md:mt-4">
+        <h1 className="font-brand text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight lowercase text-foreground mt-3 md:mt-4 leading-none">
           yora
         </h1>
 
-        {/* Tagline */}
-        <p className="mt-2 font-sans text-xs sm:text-sm tracking-[0.35em] uppercase text-foreground/50">
+        {/* Tagline - Generous spacing below 'y' descender */}
+        <p className="mt-6 md:mt-7 font-sans text-xs sm:text-sm tracking-[0.4em] uppercase text-foreground/50">
           Do What Is Right
         </p>
 
         {/* One-line product hook */}
-        <p className="mt-3 font-sans text-xs sm:text-sm tracking-wide text-foreground/70 max-w-md">
+        <p className="mt-4 font-sans text-xs sm:text-sm tracking-wide text-foreground/70 max-w-md">
           Natural Cellular Energy. Zero Caffeine. Zero Crashes.
         </p>
 
