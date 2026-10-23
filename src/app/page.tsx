@@ -3,7 +3,6 @@ import ProductReveal from '@/components/ProductReveal';
 import ThePromise from '@/components/ThePromise';
 import BenefitPillars from '@/components/BenefitPillars';
 import ExperienceTimeline from '@/components/ExperienceTimeline';
-import ScienceTeaser from '@/components/ScienceTeaser';
 import TheRitualSection from '@/components/TheRitualSection';
 import LabSourcingPlaceholder from '@/components/LabSourcingPlaceholder';
 import InstagramFeed from '@/components/InstagramFeed';
@@ -37,10 +36,7 @@ export default function HomePage() {
       {/* Section 5: The 30-Day Experience Timeline */}
       <ExperienceTimeline />
 
-      {/* Section 6: The Science Teaser (Mechanism of Action) */}
-      <ScienceTeaser />
-
-      {/* Section 7: The Ritual Steps (1 Capsule Protocol) */}
+      {/* Section 6: The Ritual Steps (1 Capsule Protocol) */}
       <TheRitualSection />
 
       {/* Section 8: Laboratory & Cultivation Archives (Frosted Glass Placeholders) */}

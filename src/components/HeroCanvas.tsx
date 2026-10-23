@@ -363,17 +363,6 @@ export default function HeroCanvas() {
         <p className="mt-4 font-sans text-xs sm:text-sm tracking-wide text-foreground/70 max-w-md">
           Natural Cellular Energy. Zero Caffeine. Zero Crashes.
         </p>
-
-        {/* Immediate Product Bottle Teaser Peek */}
-        <div className="mt-6 flex items-center gap-3.5 px-5 py-2.5 rounded-full border border-foreground/15 bg-background/60 backdrop-blur-xl shadow-lg pointer-events-auto hover:border-accent/50 transition-all duration-300">
-          <div className="w-8 h-8 rounded-full overflow-hidden border border-foreground/15 bg-black/40 shrink-0">
-            <img src="/cordybotmkup.jpeg" alt="Yora Cordyceps Bottle" className="w-full h-full object-cover scale-125" />
-          </div>
-          <div className="text-left font-sans">
-            <span className="text-[11px] font-medium text-foreground block tracking-wider">Cordyceps Capsules • 12.75 mg/g</span>
-            <span className="text-[9px] tracking-widest text-accent uppercase block">1 Capsule Daily • Standardized Potency</span>
-          </div>
-        </div>
       </div>
 
       {/* Bottom Scroll Cue */}
