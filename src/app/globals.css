@@ -19,7 +19,7 @@
 }
 
 .font-brand {
-  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-family: 'Century Gothic', -apple-system, BlinkMacSystemFont, var(--font-poppins), 'Poppins', sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {

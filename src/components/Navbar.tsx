@@ -6,6 +6,8 @@ import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 
+import YoraWordmark from './YoraWordmark';
+
 const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/science', label: 'The Science' },
@@ -40,9 +42,8 @@ export default function Navbar() {
           {/* Logo Lockup */}
           <Link href="/" className="flex items-center gap-2.5 group">
             <img src="/yora-emblem.png" alt="yora logo" className="w-7 h-7 md:w-8 md:h-8 object-contain transition-transform duration-300 group-hover:rotate-12" />
-            <span className="font-brand text-2xl md:text-3xl font-bold tracking-tight lowercase text-foreground group-hover:text-accent transition-colors duration-300">
-              yora
-            </span>
+            <YoraWordmark className="h-6 md:h-7 w-auto text-foreground group-hover:text-accent transition-colors duration-300" />
+            <span className="sr-only">yora</span>
           </Link>
 
           {/* Desktop Nav */}

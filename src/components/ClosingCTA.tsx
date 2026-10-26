@@ -3,6 +3,7 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import Link from 'next/link';
+import YoraWordmark from './YoraWordmark';
 
 export default function ClosingCTA() {
   const ref = useRef(null);
@@ -49,7 +50,7 @@ export default function ClosingCTA() {
             href="/shop"
             className="group inline-flex items-center gap-4 font-sans text-sm tracking-[0.25em] uppercase px-12 py-5 bg-foreground text-background hover:bg-accent hover:text-white transition-all duration-500 ease-out"
           >
-            Shop <span className="font-brand font-bold lowercase tracking-normal text-base">yora</span>
+            Shop <YoraWordmark className="h-4 w-auto inline-block text-current align-middle" /><span className="sr-only">yora</span>
             <motion.span
               className="inline-block"
               animate={{ x: [0, 4, 0] }}

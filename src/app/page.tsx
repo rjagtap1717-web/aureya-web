@@ -7,6 +7,7 @@ import TheRitualSection from '@/components/TheRitualSection';
 import LabSourcingPlaceholder from '@/components/LabSourcingPlaceholder';
 import InstagramFeed from '@/components/InstagramFeed';
 import ClosingCTA from '@/components/ClosingCTA';
+import YoraWordmark from '@/components/YoraWordmark';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
@@ -52,9 +53,10 @@ export default function HomePage() {
       <footer className="w-full py-16 px-6 lg:px-24 border-t border-foreground/10 font-sans text-xs tracking-widest uppercase text-foreground/40">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
-            <span className="inline-flex items-center gap-2 font-brand font-bold lowercase tracking-normal text-foreground text-lg">
+            <span className="inline-flex items-center gap-2 text-foreground">
               <img src="/yora-emblem.png" alt="yora emblem" className="w-5 h-5 object-contain" />
-              yora
+              <YoraWordmark className="h-4 w-auto text-foreground" />
+              <span className="sr-only">yora</span>
             </span>
             <span className="text-foreground/30 hidden sm:inline">•</span>
             <span>Do What Is Right</span>

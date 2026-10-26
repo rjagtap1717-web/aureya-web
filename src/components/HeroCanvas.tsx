@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import YoraWordmark from './YoraWordmark';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -350,12 +351,13 @@ export default function HeroCanvas() {
         />
 
         {/* Wordmark */}
-        <h1 className="font-brand text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight lowercase text-foreground mt-3 md:mt-4 leading-none">
-          yora
+        <h1 className="mt-3 md:mt-4 flex items-center justify-center">
+          <YoraWordmark className="h-12 sm:h-16 md:h-20 lg:h-24 w-auto text-foreground drop-shadow-sm" />
+          <span className="sr-only">yora</span>
         </h1>
 
-        {/* Tagline - Generous spacing below 'y' descender */}
-        <p className="mt-6 md:mt-7 font-sans text-xs sm:text-sm tracking-[0.4em] uppercase text-foreground/50">
+        {/* Tagline */}
+        <p className="mt-5 md:mt-6 font-sans text-xs sm:text-sm tracking-[0.4em] uppercase text-foreground/50">
           Do What Is Right
         </p>
 
