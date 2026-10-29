@@ -5,7 +5,7 @@ import Script from 'next/script';
 import { Loader2 } from 'lucide-react';
 
 interface CheckoutProps {
-  variant?: 'variant-a' | 'variant-b';
+  variant?: string;
 }
 
 export default function Checkout({ variant = 'variant-b' }: CheckoutProps) {
