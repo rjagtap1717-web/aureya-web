@@ -29,7 +29,7 @@ export default function ThePromise() {
           initial={{ opacity: 0, y: 10 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="font-sans text-xs tracking-[0.3em] uppercase text-foreground/40 mb-16 text-center"
+          className="font-sans text-xs tracking-[0.3em] uppercase text-foreground/60 mb-16 text-center font-medium"
         >
           The Promise
         </motion.p>
@@ -52,9 +52,9 @@ export default function ThePromise() {
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 0.5, y: 0 } : {}}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="mt-16 font-sans text-sm leading-relaxed tracking-wide text-foreground/50 max-w-xs"
+          className="mt-16 font-sans text-sm md:text-base leading-relaxed tracking-wide text-foreground/85 max-w-sm"
         >
           Pure Cordyceps militaris, engineered to elevate your daily baseline and restore sustained, jitter-free cellular energy.
         </motion.p>
