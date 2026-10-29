@@ -119,14 +119,25 @@ export default function Navbar() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: navLinks.length * 0.06, duration: 0.4 }}
+              className="flex flex-col items-center gap-4 mt-4"
             >
               <Link
                 href="/shop"
                 onClick={() => setMenuOpen(false)}
-                className="font-sans text-sm tracking-[0.2em] uppercase px-8 py-4 bg-foreground text-background mt-4 inline-block hover:bg-accent hover:text-white transition-all duration-300"
+                className="font-sans text-sm tracking-[0.2em] uppercase px-8 py-4 bg-foreground text-background inline-block hover:bg-accent hover:text-white transition-all duration-300"
               >
                 Shop ↗
               </Link>
+              <a
+                href="https://www.instagram.com/yora.wellness?psln=cjFkc2kxZnl5NG1j&utm_source=qr"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMenuOpen(false)}
+                className="font-sans text-xs tracking-[0.2em] uppercase text-foreground/50 hover:text-accent transition-colors duration-300 flex items-center gap-1.5 pt-2"
+              >
+                <span>@yora.wellness</span>
+                <span>↗</span>
+              </a>
             </motion.div>
           </motion.div>
         )}

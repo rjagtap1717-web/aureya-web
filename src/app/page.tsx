@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
-  const instagramUrl = 'https://www.instagram.com/yora.wellness?vrfl=cjFkc2kxZnl5NG1j&utm_source=qr';
+  const instagramUrl = 'https://www.instagram.com/yora.wellness?psln=cjFkc2kxZnl5NG1j&utm_source=qr';
 
   return (
     <main className="min-h-[100dvh] bg-background text-foreground">

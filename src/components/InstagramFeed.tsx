@@ -33,7 +33,7 @@ const posts = [
 export default function InstagramFeed() {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: '-10%' });
-  const instagramUrl = 'https://www.instagram.com/yora.wellness?vrfl=cjFkc2kxZnl5NG1j&utm_source=qr';
+  const instagramUrl = 'https://www.instagram.com/yora.wellness?psln=cjFkc2kxZnl5NG1j&utm_source=qr';
 
   return (
     <section ref={ref} className="relative w-full py-28 md:py-36 px-6 lg:px-24 bg-background border-t border-foreground/5 overflow-hidden">
