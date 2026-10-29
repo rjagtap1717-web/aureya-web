@@ -132,7 +132,7 @@ export default function ProductReveal() {
                 Acquire The Ritual ↗
               </Link>
               <span className="font-sans text-xs tracking-wider text-foreground/40">
-                Starting at ₹999 • Free Delivery Across India
+                Starting at ₹1,499 • Free Delivery Across India
               </span>
             </motion.div>
           </div>
