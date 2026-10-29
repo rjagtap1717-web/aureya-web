@@ -101,7 +101,7 @@ export default function ProductReveal() {
                   initial={{ opacity: 0, x: 20 }}
                   animate={inView ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.7, delay: 0.35 + i * 0.1 }}
-                  className="p-6 rounded-2xl border border-foreground/10 bg-foreground/[0.02] hover:bg-foreground/[0.04] hover:border-accent/30 transition-all duration-300"
+                  className="p-6 rounded-2xl border border-foreground/10 bg-foreground/[0.02] hover:bg-foreground/[0.04] transition-all duration-300 spotlight-card"
                 >
                   <div className="flex items-baseline justify-between mb-2">
                     <span className="font-sans text-xs tracking-widest uppercase text-foreground/50">

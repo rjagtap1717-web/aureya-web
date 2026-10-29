@@ -58,3 +58,81 @@ h1, h2, h3, h4, h5, h6 {
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(180, 133, 48, 0.5);
 }
+
+/* ============================================================
+   Interactive Spotlight Cards & Ambient Glow Styles
+   ============================================================ */
+
+.spotlight-card {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Surface illumination */
+.spotlight-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  background: radial-gradient(
+    400px circle at var(--spotlight-x, -500px) var(--spotlight-y, -500px),
+    rgba(180, 133, 48, 0.08) 0%,
+    transparent 70%
+  );
+  z-index: 1;
+}
+
+/* Border illumination */
+.spotlight-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 1px;
+  background: radial-gradient(
+    320px circle at var(--spotlight-x, -500px) var(--spotlight-y, -500px),
+    rgba(180, 133, 48, 0.45) 0%,
+    rgba(223, 188, 119, 0.15) 40%,
+    transparent 70%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: 2;
+}
+
+@media (prefers-color-scheme: dark) {
+  .spotlight-card::before {
+    background: radial-gradient(
+      450px circle at var(--spotlight-x, -500px) var(--spotlight-y, -500px),
+      rgba(216, 170, 83, 0.12) 0%,
+      transparent 70%
+    );
+  }
+
+  .spotlight-card::after {
+    background: radial-gradient(
+      320px circle at var(--spotlight-x, -500px) var(--spotlight-y, -500px),
+      rgba(247, 206, 107, 0.65) 0%,
+      rgba(216, 170, 83, 0.25) 40%,
+      transparent 70%
+    );
+  }
+}
+
+.spotlight-card:hover::before,
+.spotlight-card:hover::after {
+  opacity: 1;
+}
+
+/* Ensure card text and buttons sit cleanly above spotlight effects */
+.spotlight-card > * {
+  position: relative;
+  z-index: 3;
+}

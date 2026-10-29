@@ -59,7 +59,7 @@ export default function BenefitPillars() {
             initial={{ opacity: 0, y: 30 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="bg-background p-10 lg:p-14 group hover:bg-accent/4 transition-colors duration-500"
+            className="bg-background p-10 lg:p-14 group hover:bg-accent/4 transition-colors duration-500 spotlight-card"
           >
             <div className="mb-8 text-2xl text-accent/70 group-hover:text-accent transition-colors duration-500 font-sans">
               {b.glyph}

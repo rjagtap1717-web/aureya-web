@@ -78,7 +78,7 @@ export default function ExperienceTimeline() {
               initial={{ opacity: 0, y: 35 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.2 + i * 0.15, ease: [0.16, 1, 0.3, 1] }}
-              className="relative p-8 md:p-10 rounded-2xl border border-foreground/10 bg-foreground/[0.02] flex flex-col justify-between group hover:border-accent/40 hover:bg-foreground/[0.04] transition-all duration-500"
+              className="relative p-8 md:p-10 rounded-2xl border border-foreground/10 bg-foreground/[0.02] flex flex-col justify-between group hover:bg-foreground/[0.04] transition-all duration-500 spotlight-card"
             >
               <div>
                 <div className="flex items-center justify-between mb-8 pb-4 border-b border-foreground/5">

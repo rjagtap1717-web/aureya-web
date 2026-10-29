@@ -76,7 +76,7 @@ export default function TheRitualSection() {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.2 + i * 0.15, ease: [0.16, 1, 0.3, 1] }}
-              className="p-8 md:p-10 rounded-2xl border border-foreground/10 bg-foreground/[0.02] hover:bg-foreground/[0.04] hover:border-accent/30 transition-all duration-300 relative group"
+              className="p-8 md:p-10 rounded-2xl border border-foreground/10 bg-foreground/[0.02] hover:bg-foreground/[0.04] transition-all duration-300 relative group spotlight-card"
             >
               <span className="font-mono text-xs tracking-widest text-accent uppercase block mb-6 font-semibold">
                 {s.time} • Step 0{i + 1}

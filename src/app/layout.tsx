@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Playfair_Display, Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import CursorGlow from "@/components/CursorGlow";
 
 const playfair = Playfair_Display({ 
   subsets: ["latin"],
@@ -38,7 +39,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${playfair.variable} ${inter.variable} ${poppins.variable}`} suppressHydrationWarning>
-      <body className="antialiased selection:bg-accent/20 selection:text-accent" suppressHydrationWarning>
+      <body className="antialiased selection:bg-accent/20 selection:text-accent relative" suppressHydrationWarning>
+        <CursorGlow />
         <Navbar />
         {children}
       </body>
