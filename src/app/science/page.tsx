@@ -39,7 +39,7 @@ export default function SciencePage() {
             <span className="font-sans text-xs tracking-[0.3em] uppercase text-accent mb-3 block">Mechanism of Action</span>
             <h2 className="font-serif text-3xl md:text-4xl mb-6">The Compound</h2>
             <p className="font-sans text-sm leading-relaxed text-foreground/70 mb-6">
-              Yora uses only cultivated Cordyceps militaris, grown in strictly controlled environments. Wild cordyceps can be incredibly inconsistent, but our strain guarantees a verified 12.75 mg/g cordycepin potency and standardized active bioactives every single time.
+              Yora uses only cultivated Cordyceps militaris, grown in strictly controlled environments. Wild cordyceps can be unpredictable, but our strain guarantees an industry-first 10+ mg/g cordycepin potency. While standard market alternatives rarely verify active levels, Yora guarantees 10+ mg/g in every batch.
             </p>
             <p className="font-sans text-sm leading-relaxed text-foreground/70 mb-6">
               The primary active molecule, Cordycepin (3'-deoxyadenosine), directly interacts with your cellular ATP cycle.
@@ -84,7 +84,7 @@ export default function SciencePage() {
               <div>
                 <h3 className="font-serif text-xl text-accent mb-2">Maximum Bioavailability</h3>
                 <p className="font-sans text-sm leading-relaxed opacity-70">
-                  Lab-verified 12.75 mg/g cordycepin potency alongside active beta-glucans and polysaccharides, delivering clinical-grade efficacy confirmed through rigorous HPLC testing.
+                  Guaranteed 10+ mg/g cordycepin potency alongside active beta-glucans and polysaccharides, setting a market-first potency benchmark confirmed through third-party HPLC testing.
                 </p>
               </div>
               
@@ -110,8 +110,8 @@ export default function SciencePage() {
           <div className="hidden lg:flex w-64 h-64 border-4 border-background/10 rounded-full items-center justify-center relative shrink-0 mt-8">
             <div className="absolute inset-0 border border-accent rounded-full animate-[spin_10s_linear_infinite]" />
             <div className="text-center px-4">
-              <span className="font-serif text-3xl text-accent block">12.75 mg/g</span>
-              <span className="font-sans text-[10px] tracking-widest uppercase opacity-50 mt-2 block">Cordycepin Potency</span>
+              <span className="font-serif text-3xl text-accent block">10+ mg/g</span>
+              <span className="font-sans text-[10px] tracking-widest uppercase opacity-50 mt-2 block">Guaranteed Potency</span>
             </div>
           </div>
         </motion.div>
@@ -130,7 +130,7 @@ export default function SciencePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             {[
-              { parameter: 'Cordycepin Content', value: '12.75 mg/g', protocol: 'HPLC', highlight: true },
+              { parameter: 'Cordycepin Content', value: '10+ mg/g', protocol: 'HPLC Verified', highlight: true },
               { parameter: 'Beta-Glucans', value: '4.85%', protocol: 'HPLC', highlight: false },
               { parameter: 'Active Polysaccharides', value: '4.17%', protocol: 'ITS/LAB/SOP', highlight: false },
               { parameter: 'Adenosine Content', value: '2.84 mg/g', protocol: 'HPLC', highlight: false },
@@ -163,7 +163,7 @@ export default function SciencePage() {
           href="/shop"
           className="inline-block bg-foreground text-background hover:bg-accent hover:text-white transition-all duration-300 px-10 py-4 font-sans text-xs tracking-[0.25em] uppercase shadow-xl"
         >
-          Acquire The Discovery Ritual ↗
+          Acquire The Cellular Reset ↗
         </Link>
       </motion.div>
     </motion.main>

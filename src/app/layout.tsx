@@ -24,7 +24,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "yora | Cellular Reset & Discovery Ritual",
+  title: "yora | The Cellular Reset • Pure Cordyceps",
   description: "yora Cordyceps militaris capsules for sustained energy and focus.",
   icons: {
     icon: '/yora-emblem.png',

@@ -11,8 +11,8 @@ export default function ProductReveal() {
   const specs = [
     {
       label: 'Cordycepin Potency',
-      value: '12.75 mg/g',
-      detail: 'Lab-verified standardized active compound that upregulates cellular ATP.',
+      value: '10+ mg/g',
+      detail: 'Industry-first potency guarantee. While market alternatives rarely verify active levels, Yora guarantees 10+ mg/g in every batch.',
     },
     {
       label: '100% Fruiting Body',
@@ -132,7 +132,7 @@ export default function ProductReveal() {
                 Acquire The Ritual ↗
               </Link>
               <span className="font-sans text-xs tracking-wider text-foreground/40">
-                Starting at ₹1,499 • Free Delivery Across India
+                ₹1,499 • Free Delivery Across India
               </span>
             </motion.div>
           </div>

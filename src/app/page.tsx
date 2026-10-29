@@ -12,9 +12,9 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'yora | Do What Is Right — Pure Cordyceps Militaris',
+  title: 'yora | Do What Is Right • Pure Cordyceps Militaris',
   description:
-    'yora Cordyceps militaris. Lab-verified 12.75 mg/g cordycepin potency, 100% pure fruiting body, third-party tested and sealed for ultimate freshness. Natural cellular energy with zero crashes.',
+    'yora Cordyceps militaris. Industry-first 10+ mg/g guaranteed cordycepin potency, 100% pure fruiting body, third-party tested and sealed for ultimate freshness. Natural cellular energy with zero crashes.',
 };
 
 export default function HomePage() {

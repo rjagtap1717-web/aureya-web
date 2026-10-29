@@ -20,8 +20,8 @@ export default function RitualPage() {
   const comparison = [
     {
       metric: 'Energy Mechanism',
-      caffeine: 'Blocks adenosine receptors — tricks your brain into ignoring fatigue without creating energy.',
-      yora: 'Directly up-regulates mitochondrial ATP synthesis — generates authentic cellular fuel.',
+      caffeine: 'Blocks adenosine receptors, tricking your brain into ignoring fatigue without creating energy.',
+      yora: 'Directly up-regulates mitochondrial ATP synthesis to generate authentic cellular fuel.',
     },
     {
       metric: 'Hormonal Stress',
@@ -65,7 +65,7 @@ export default function RitualPage() {
             <span className="italic text-foreground/70">Reset.</span>
           </h1>
           <p className="font-sans text-sm md:text-base leading-relaxed text-foreground/60 max-w-2xl">
-            Caffeine is a loan against tomorrow. It does not produce energy—it masks biological exhaustion while taxing your adrenals. Yora was engineered to replace synthetic stimulation with pure mitochondrial ATP.
+            Caffeine is a loan against tomorrow. It does not produce energy. It masks biological exhaustion while taxing your adrenals. Yora was engineered to replace synthetic stimulation with pure mitochondrial ATP.
           </p>
         </motion.div>
 
@@ -121,7 +121,7 @@ export default function RitualPage() {
               </span>
               <h3 className="font-serif text-2xl mb-4 text-foreground">Awaken & Prime</h3>
               <p className="font-sans text-xs sm:text-sm text-foreground/70 leading-relaxed mb-6">
-                Consume 2 capsules on an empty stomach with 300ml of pure room-temperature water. Step into direct morning sunlight for 5–10 minutes to set your circadian master clock.
+                Consume 2 capsules on an empty stomach with 300ml of pure room-temperature water. Step into direct morning sunlight for 5 to 10 minutes to set your circadian master clock.
               </p>
               <div className="pt-4 border-t border-foreground/5 text-[11px] font-sans text-foreground/45">
                 Biological Purpose: Optimal enteric absorption before gastrointestinal enzyme saturation.
@@ -167,7 +167,7 @@ export default function RitualPage() {
             <div className="p-8 rounded-2xl border border-foreground/10 bg-foreground/[0.02]">
               <div className="flex items-center justify-between mb-3">
                 <span className="font-serif text-xl text-foreground">Week 1: The Adenosine Clearance</span>
-                <span className="font-mono text-xs text-accent">Day 01 — 07</span>
+                <span className="font-mono text-xs text-accent">Day 01 to 07</span>
               </div>
               <p className="font-sans text-xs sm:text-sm text-foreground/60 leading-relaxed">
                 As you step away from caffeine, your adenosine receptors begin resetting to natural sensitivity. Yora provides the cellular ATP backbone to prevent debilitating brain fog and ease the transition.
@@ -177,17 +177,17 @@ export default function RitualPage() {
             <div className="p-8 rounded-2xl border border-foreground/10 bg-foreground/[0.02]">
               <div className="flex items-center justify-between mb-3">
                 <span className="font-serif text-xl text-foreground">Week 2: Mitochondrial Upregulation</span>
-                <span className="font-mono text-xs text-accent">Day 08 — 14</span>
+                <span className="font-mono text-xs text-accent">Day 08 to 14</span>
               </div>
               <p className="font-sans text-xs sm:text-sm text-foreground/60 leading-relaxed">
-                Cordycepin accumulates at therapeutic baselines. You will notice the afternoon 3 PM slump vanishes entirely. Energy feels level, clear, and quiet—like an engine running on optimal octane.
+                Cordycepin accumulates at therapeutic baselines. You will notice the afternoon 3 PM slump vanishes entirely. Energy feels level, clear, and quiet, like an engine running on optimal octane.
               </p>
             </div>
 
             <div className="p-8 rounded-2xl border border-foreground/10 bg-foreground/[0.02]">
               <div className="flex items-center justify-between mb-3">
-                <span className="font-serif text-xl text-foreground">Week 3–4: Permanent Baseline Elevation</span>
-                <span className="font-mono text-xs text-accent">Day 15 — 30</span>
+                <span className="font-serif text-xl text-foreground">Week 3 to 4: Permanent Baseline Elevation</span>
+                <span className="font-mono text-xs text-accent">Day 15 to 30</span>
               </div>
               <p className="font-sans text-xs sm:text-sm text-foreground/60 leading-relaxed">
                 Your sleep latency drops, deep sleep stages lengthen, and waking up no longer requires a chemical crutch. Your natural cellular output is restored to peak human baseline.
@@ -211,7 +211,7 @@ export default function RitualPage() {
               },
               {
                 q: 'When should I expect the transition shift?',
-                a: 'Acute cognitive clarity is typically felt within 45 to 60 minutes of the morning dose. Deep cellular adaptations—such as improved VO2 max, balanced cortisol, and zero afternoon slumps—compound across 14 to 30 days of consistent use.',
+                a: 'Acute cognitive clarity is typically felt within 45 to 60 minutes of the morning dose. Deep cellular adaptations (such as improved VO2 max, balanced cortisol, and zero afternoon slumps) compound across 14 to 30 days of consistent use.',
               },
               {
                 q: 'How should I take my daily serving?',
@@ -234,7 +234,7 @@ export default function RitualPage() {
             href="/shop"
             className="inline-block bg-foreground text-background hover:bg-accent hover:text-white transition-all duration-300 px-12 py-5 font-sans text-xs tracking-[0.25em] uppercase shadow-2xl"
           >
-            Acquire The Discovery Ritual — ₹999 ↗
+            Acquire The Cellular Reset • ₹1,499 ↗
           </Link>
         </motion.div>
 

@@ -6,7 +6,7 @@ import { motion, useInView } from 'framer-motion';
 const posts = [
   {
     tag: '@yora.wellness',
-    caption: '12.75 mg/g standardized cordycepin. Potency measured down to the milligram.',
+    caption: '10+ mg/g guaranteed cordycepin. An industry-first benchmark measured down to the milligram.',
     type: 'Potency Study',
     bg: 'bg-gradient-to-br from-emerald-950/40 via-background to-black',
   },

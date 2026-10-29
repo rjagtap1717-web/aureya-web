@@ -15,9 +15,9 @@ const slides = [
   {
     category: 'ANALYTICAL CHEMISTRY',
     title: 'HPLC Chromatography Laboratory',
-    desc: 'High-performance liquid chromatography testing verifying standardized 12.75 mg/g cordycepin potency in every batch.',
+    desc: 'High-performance liquid chromatography testing verifying guaranteed 10+ mg/g cordycepin potency in every batch.',
     status: 'Spectrometry Video Archive Coming Soon',
-    badge: '12.75 mg/g Standardized',
+    badge: '10+ mg/g Guaranteed',
     gradient: 'from-amber-950/50 via-background/90 to-black',
   },
   {

@@ -42,7 +42,7 @@ export default function AboutPage() {
             <h2 className="font-serif text-3xl mb-8">A Note on Intent</h2>
             <div className="font-sans text-sm leading-loose text-foreground/70 space-y-6">
               <p>
-                The wellness industry is flooded with mycelium grown on grain—mostly starch, devoid of active compounds, packaged in unsealed, low-grade containers that degrade whatever potency remains.
+                The wellness industry is flooded with mycelium grown on grain: mostly starch, devoid of active compounds, packaged in unsealed containers that degrade whatever potency remains.
               </p>
               <p>
                 We grew tired of the dilution. We wanted the pure fruiting body. We wanted a clinical dose. We wanted a vessel that respected the molecule.
@@ -102,7 +102,7 @@ export default function AboutPage() {
             </div>
 
             <div className="relative z-10 pt-4 border-t border-foreground/5 flex items-center justify-between text-xs font-sans text-foreground/50">
-              <span>Standardized 12.75 mg/g</span>
+              <span>Guaranteed 10+ mg/g</span>
               <span className="text-accent font-mono text-[11px]">100% Pure Fruiting Body</span>
             </div>
           </motion.div>
@@ -117,7 +117,7 @@ export default function AboutPage() {
             href="/shop"
             className="inline-block bg-foreground text-background hover:bg-accent hover:text-white transition-all duration-300 px-12 py-5 font-sans text-xs tracking-widest uppercase shadow-xl"
           >
-            Shop The Discovery Ritual ↗
+            Shop The Cellular Reset ↗
           </Link>
         </motion.div>
 

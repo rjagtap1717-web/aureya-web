@@ -5,7 +5,7 @@ import { motion, useInView } from 'framer-motion';
 
 const phases = [
   {
-    period: 'Day 1 — 7',
+    period: 'Day 1 to 7',
     headline: 'The Mitochondrial Lift',
     bioactive: 'ATP Synthesis',
     description:
@@ -13,7 +13,7 @@ const phases = [
     indicator: 'Clean Focus',
   },
   {
-    period: 'Day 7 — 14',
+    period: 'Day 7 to 14',
     headline: 'Oxygenation & Stamina',
     bioactive: 'VO2 Max Modulation',
     description:
@@ -21,7 +21,7 @@ const phases = [
     indicator: 'Sustained Output',
   },
   {
-    period: 'Day 21 — 30',
+    period: 'Day 21 to 30',
     headline: 'The Baseline Reset',
     bioactive: 'HPA-Axis Regulation',
     description:

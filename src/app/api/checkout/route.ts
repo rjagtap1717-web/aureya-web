@@ -7,19 +7,16 @@ const razorpay = new Razorpay({
 });
 
 const PRICES = {
-  'variant-a': 999, // 30 Capsules - 999 INR
   'variant-b': 1499, // 60 Capsules - 1499 INR
 };
 
 export async function POST(req: Request) {
   try {
-    const { variant } = await req.json();
+    const body = await req.json().catch(() => ({}));
+    const variant = body?.variant || 'variant-b';
 
-    if (!variant || !PRICES[variant as keyof typeof PRICES]) {
-      return NextResponse.json({ error: 'Invalid variant selected' }, { status: 400 });
-    }
-
-    const amount = PRICES[variant as keyof typeof PRICES] * 100; // Razorpay expects amount in paise
+    // Single product: 60 Capsules at 1,499 INR
+    const amount = 1499 * 100; // Razorpay expects amount in paise
 
     const options = {
       amount,

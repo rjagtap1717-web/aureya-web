@@ -5,10 +5,10 @@ import Script from 'next/script';
 import { Loader2 } from 'lucide-react';
 
 interface CheckoutProps {
-  variant: 'variant-a' | 'variant-b';
+  variant?: 'variant-a' | 'variant-b';
 }
 
-export default function Checkout({ variant }: CheckoutProps) {
+export default function Checkout({ variant = 'variant-b' }: CheckoutProps) {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
 
@@ -19,7 +19,7 @@ export default function Checkout({ variant }: CheckoutProps) {
       const res = await fetch('/api/checkout', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ variant }),
+        body: JSON.stringify({ variant: 'variant-b' }),
       });
       
       const order = await res.json();
@@ -33,7 +33,7 @@ export default function Checkout({ variant }: CheckoutProps) {
         amount: order.amount,
         currency: order.currency,
         name: 'yora',
-        description: variant === 'variant-a' ? 'The Discovery Ritual (30 Capsules)' : 'The Cellular Reset (60 Capsules)',
+        description: 'The Cellular Reset (60 Capsules)',
         order_id: order.orderId,
         handler: async function (response: any) {
           const verifyRes = await fetch('/api/verify', {

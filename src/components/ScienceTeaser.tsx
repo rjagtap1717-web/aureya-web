@@ -53,10 +53,10 @@ export default function ScienceTeaser() {
             >
               <div className="flex items-center gap-3">
                 <span className="w-2 h-2 rounded-full bg-accent" />
-                <span className="font-sans text-xs uppercase tracking-wider text-foreground font-medium">Standardized Cordycepin: 12.75 mg/g</span>
+                <span className="font-sans text-xs uppercase tracking-wider text-foreground font-medium">Standardized Cordycepin: 10+ mg/g</span>
               </div>
               <p className="font-sans text-xs text-foreground/60 leading-relaxed pl-5">
-                Lab verified by third-party chromatography to ensure exact potency in every single batch.
+                While standard market cordyceps rarely verify active levels, Yora is the first to guarantee 10+ mg/g active cordycepin in every single batch via third-party HPLC testing.
               </p>
             </motion.div>
 
@@ -89,7 +89,7 @@ export default function ScienceTeaser() {
                 className="w-full h-auto object-contain rounded-2xl transition-transform duration-700 group-hover:scale-[1.01]"
               />
               <div className="p-4 flex items-center justify-between text-xs font-sans text-foreground/40">
-                <span>Figure 1.0 — Mitochondrial Oxygen Kinetics</span>
+                <span>Figure 1.0: Mitochondrial Oxygen Kinetics</span>
                 <span className="text-accent font-mono text-[11px]">COA Verified</span>
               </div>
             </div>
