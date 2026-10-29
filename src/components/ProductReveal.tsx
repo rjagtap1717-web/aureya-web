@@ -76,7 +76,7 @@ export default function ProductReveal() {
               {/* Minimal dosage tag */}
               <div className="absolute bottom-6 left-6 right-6 z-20 flex items-center justify-between px-5 py-3 rounded-2xl bg-background/80 backdrop-blur-md border border-foreground/10 text-xs font-sans">
                 <span className="text-foreground/80 font-medium">Daily Serving</span>
-                <span className="text-accent font-mono tracking-wider">1 Capsule Daily • 30 or 60 Count</span>
+                <span className="text-accent font-mono tracking-wider">2 Capsules Daily</span>
               </div>
             </div>
           </motion.div>

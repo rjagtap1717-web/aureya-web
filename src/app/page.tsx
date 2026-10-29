@@ -37,7 +37,7 @@ export default function HomePage() {
       {/* Section 5: The 30-Day Experience Timeline */}
       <ExperienceTimeline />
 
-      {/* Section 6: The Ritual Steps (1 Capsule Protocol) */}
+      {/* Section 6: The Ritual Steps (2 Capsules Protocol) */}
       <TheRitualSection />
 
       {/* Section 8: Laboratory & Cultivation Archives (Frosted Glass Placeholders) */}

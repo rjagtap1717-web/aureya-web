@@ -12,7 +12,7 @@ const posts = [
   },
   {
     tag: '@yora.wellness',
-    caption: 'The morning ritual: 1 capsule, empty stomach, natural cellular ATP reset.',
+    caption: 'The morning ritual: 2 capsules, empty stomach, natural cellular ATP reset.',
     type: 'The Daily Protocol',
     bg: 'bg-gradient-to-br from-amber-950/30 via-background to-black',
   },

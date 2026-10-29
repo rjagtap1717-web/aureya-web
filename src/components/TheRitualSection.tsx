@@ -8,7 +8,7 @@ const steps = [
   {
     time: '07:00 AM',
     title: 'Awaken & Prime',
-    desc: 'Consume 1 capsule on an empty stomach with 300ml of room temperature water.',
+    desc: 'Consume 2 capsules on an empty stomach with 300ml of room temperature water.',
     detail: 'Optimal uptake occurs before metabolic breakdown of heavy meals.',
   },
   {

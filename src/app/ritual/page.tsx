@@ -121,7 +121,7 @@ export default function RitualPage() {
               </span>
               <h3 className="font-serif text-2xl mb-4 text-foreground">Awaken & Prime</h3>
               <p className="font-sans text-xs sm:text-sm text-foreground/70 leading-relaxed mb-6">
-                Consume 1 capsule on an empty stomach with 300ml of pure room-temperature water. Step into direct morning sunlight for 5–10 minutes to set your circadian master clock.
+                Consume 2 capsules on an empty stomach with 300ml of pure room-temperature water. Step into direct morning sunlight for 5–10 minutes to set your circadian master clock.
               </p>
               <div className="pt-4 border-t border-foreground/5 text-[11px] font-sans text-foreground/45">
                 Biological Purpose: Optimal enteric absorption before gastrointestinal enzyme saturation.
@@ -214,8 +214,8 @@ export default function RitualPage() {
                 a: 'Acute cognitive clarity is typically felt within 45 to 60 minutes of the morning dose. Deep cellular adaptations—such as improved VO2 max, balanced cortisol, and zero afternoon slumps—compound across 14 to 30 days of consistent use.',
               },
               {
-                q: 'Is 1 capsule enough, or do I need 2?',
-                a: '1 capsule daily (12.75 mg/g standardized cordycepin) provides the clinically validated baseline for sustained daily output. During heavy athletic training blocks or intensive travel, a second capsule may be consumed at midday.',
+                q: 'How should I take my daily serving?',
+                a: 'Take 2 capsules daily in the morning on an empty stomach with water. This delivers the full clinical 1200mg dose of standardized Cordyceps militaris extract for sustained all-day mitochondrial energy output.',
               },
             ].map((faq, i) => (
               <div key={i} className="border-b border-foreground/10 pb-6">
