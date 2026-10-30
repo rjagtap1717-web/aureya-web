@@ -1,7 +1,7 @@
 'use client';
 
 import { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 
 const posts = [
   {
@@ -32,37 +32,48 @@ const posts = [
 
 export default function InstagramFeed() {
   const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { once: true, margin: '-10%' });
+  const inView = useInView(ref, { once: true, margin: '-8%' });
   const instagramUrl = 'https://www.instagram.com/yora.wellness?psln=cjFkc2kxZnl5NG1j&utm_source=qr';
+
+  const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] });
+  const bgY = useTransform(scrollYProgress, [0, 1], ['-10px', '10px']);
 
   return (
     <section ref={ref} className="relative w-full py-16 sm:py-24 md:py-36 px-4 sm:px-6 lg:px-24 bg-background border-t border-foreground/5 overflow-hidden">
+      {/* Subtle parallax ambient */}
+      <motion.div
+        style={{ y: bgY }}
+        className="absolute inset-x-0 top-0 h-full bg-gradient-to-b from-accent/[0.02] to-transparent pointer-events-none"
+      />
+
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 md:mb-20 gap-6">
           <div>
             <motion.p
-              initial={{ opacity: 0, y: 15 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6 }}
+              initial={{ opacity: 0, x: -20 }}
+              animate={inView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               className="font-sans text-xs tracking-[0.3em] uppercase text-accent mb-4"
             >
               The Collective
             </motion.p>
-            <motion.h2
-              initial={{ opacity: 0, y: 25 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.1 }}
-              className="font-serif text-3xl sm:text-5xl md:text-6xl text-foreground leading-tight"
-            >
-              Follow the Journey. <br />
-              <span className="italic text-foreground/60">@yora.wellness</span>
-            </motion.h2>
+            <div className="overflow-hidden">
+              <motion.h2
+                initial={{ opacity: 0, y: 50 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.8, delay: 0.12, ease: [0.16, 1, 0.3, 1] }}
+                className="font-serif text-3xl sm:text-5xl md:text-6xl text-foreground leading-tight"
+              >
+                Follow the Journey. <br />
+                <span className="italic text-foreground/60">@yora.wellness</span>
+              </motion.h2>
+            </div>
           </div>
 
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={inView ? { opacity: 1 } : {}}
-            transition={{ duration: 0.8, delay: 0.3 }}
+            initial={{ opacity: 0, x: 30 }}
+            animate={inView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.7, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
           >
             <a
               href={instagramUrl}
@@ -81,7 +92,7 @@ export default function InstagramFeed() {
           </motion.div>
         </div>
 
-        {/* Post Grid */}
+        {/* Post Grid — staggered fan-in from bottom */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {posts.map((post, i) => (
             <motion.a
@@ -89,9 +100,9 @@ export default function InstagramFeed() {
               href={instagramUrl}
               target="_blank"
               rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 30 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.15 + i * 0.1, ease: [0.16, 1, 0.3, 1] }}
+              initial={{ opacity: 0, y: 50, scale: 0.97 }}
+              animate={inView ? { opacity: 1, y: 0, scale: 1 } : {}}
+              transition={{ duration: 0.65, delay: 0.2 + i * 0.1, ease: [0.16, 1, 0.3, 1] }}
               className={`p-6 sm:p-8 rounded-3xl border border-foreground/10 ${post.bg} flex flex-col justify-between group hover:border-accent/40 hover:-translate-y-1 transition-all duration-500 min-h-[250px] sm:min-h-[300px] shadow-lg`}
             >
               <div className="flex items-center justify-between">

@@ -1,44 +1,64 @@
 'use client';
 
-import { motion, Variants } from 'framer-motion';
+import { useRef } from 'react';
+import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import Link from 'next/link';
 
 export default function AboutPage() {
-  const containerVariants: Variants = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: { staggerChildren: 0.2 },
-    },
-  };
+  const heroRef = useRef(null);
+  const { scrollYProgress } = useScroll({ target: heroRef, offset: ['start end', 'end start'] });
+  const glowY = useTransform(scrollYProgress, [0, 1], ['-20px', '20px']);
 
-  const itemVariants: Variants = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut' } },
-  };
+  const contentRef = useRef(null);
+  const contentInView = useInView(contentRef, { once: true, margin: '-8%' });
+
+  const cardRef = useRef(null);
+  const cardInView = useInView(cardRef, { once: true, margin: '-8%' });
+
+  const ctaRef = useRef(null);
+  const ctaInView = useInView(ctaRef, { once: true, margin: '-8%' });
 
   return (
-    <motion.main
-      initial="hidden"
-      animate="show"
-      exit={{ opacity: 0 }}
-      variants={containerVariants}
-      className="min-h-[100dvh] bg-background text-foreground pt-28 sm:pt-32 pb-20 sm:pb-24"
-    >
+    <main className="min-h-[100dvh] bg-background text-foreground pt-28 sm:pt-32 pb-20 sm:pb-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-24">
-        
-        <motion.div variants={itemVariants} className="mb-16 sm:mb-24 md:mb-32">
-          <p className="font-sans text-xs tracking-[0.3em] uppercase text-accent mb-4">The Standard</p>
-          <h1 className="font-serif text-3xl sm:text-5xl md:text-7xl text-foreground leading-tight max-w-4xl">
-            We built what we couldn&apos;t find. <br />
-            <span className="italic text-foreground/70">No compromises.</span>
-          </h1>
-        </motion.div>
+
+        {/* Hero heading */}
+        <div ref={heroRef} className="relative mb-16 sm:mb-24 md:mb-32">
+          <motion.div
+            style={{ y: glowY }}
+            className="absolute -top-20 right-0 w-[500px] h-[500px] bg-accent/4 rounded-full blur-[180px] pointer-events-none"
+          />
+          <motion.p
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="font-sans text-xs tracking-[0.3em] uppercase text-accent mb-4"
+          >
+            The Standard
+          </motion.p>
+          <div className="overflow-hidden">
+            <motion.h1
+              initial={{ opacity: 0, y: 60 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.85, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+              className="font-serif text-3xl sm:text-5xl md:text-7xl text-foreground leading-tight max-w-4xl"
+            >
+              We built what we couldn&apos;t find. <br />
+              <span className="italic text-foreground/70">No compromises.</span>
+            </motion.h1>
+          </div>
+        </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
-          
-          {/* Founder Note */}
-          <motion.div variants={itemVariants} className="lg:col-span-7">
+
+          {/* Founder Note — slides in from left */}
+          <motion.div
+            ref={contentRef}
+            initial={{ opacity: 0, x: -50 }}
+            animate={contentInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-7"
+          >
             <h2 className="font-serif text-2xl sm:text-3xl mb-6 sm:mb-8">A Note on Intent</h2>
             <div className="font-sans text-xs sm:text-sm leading-relaxed sm:leading-loose text-foreground/70 space-y-4 sm:space-y-6">
               <p>
@@ -56,7 +76,12 @@ export default function AboutPage() {
               
               <div className="pt-6 sm:pt-8 flex flex-col sm:flex-row gap-6 sm:gap-8">
                 {/* Aditya Jadhav */}
-                <div className="flex items-center gap-4">
+                <motion.div
+                  initial={{ opacity: 0, y: 25 }}
+                  animate={contentInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+                  className="flex items-center gap-4"
+                >
                   <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden border border-foreground/15 shadow-md bg-foreground/5 shrink-0">
                     <img 
                       src="/aditya.jpeg" 
@@ -68,10 +93,15 @@ export default function AboutPage() {
                     <span className="font-serif text-lg sm:text-xl italic text-foreground block">Aditya Jadhav</span>
                     <span className="font-sans text-[10px] tracking-widest uppercase text-accent">Co-Founder</span>
                   </div>
-                </div>
+                </motion.div>
                 
                 {/* Rushikesh Jagtap */}
-                <div className="flex items-center gap-4">
+                <motion.div
+                  initial={{ opacity: 0, y: 25 }}
+                  animate={contentInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.6, delay: 0.32, ease: [0.16, 1, 0.3, 1] }}
+                  className="flex items-center gap-4"
+                >
                   <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden border border-foreground/15 shadow-md bg-foreground/5 shrink-0">
                     <img 
                       src="/rushikesh.jpeg" 
@@ -83,13 +113,19 @@ export default function AboutPage() {
                     <span className="font-serif text-lg sm:text-xl italic text-foreground block">Rushikesh Jagtap</span>
                     <span className="font-sans text-[10px] tracking-widest uppercase text-accent">Co-Founder</span>
                   </div>
-                </div>
+                </motion.div>
               </div>
             </div>
           </motion.div>
 
-          {/* Editorial Product Vessel Showcase */}
-          <motion.div variants={itemVariants} className="lg:col-span-5 w-full aspect-[4/5] rounded-3xl relative overflow-hidden group border border-foreground/10 bg-gradient-to-b from-foreground/[0.03] to-foreground/[0.08] p-5 sm:p-8 flex flex-col justify-between shadow-2xl">
+          {/* Product Vessel — slides in from right */}
+          <motion.div
+            ref={cardRef}
+            initial={{ opacity: 0, x: 50, scale: 0.96 }}
+            animate={cardInView ? { opacity: 1, x: 0, scale: 1 } : {}}
+            transition={{ duration: 0.85, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-5 w-full aspect-[4/5] rounded-3xl relative overflow-hidden group border border-foreground/10 bg-gradient-to-b from-foreground/[0.03] to-foreground/[0.08] p-5 sm:p-8 flex flex-col justify-between shadow-2xl"
+          >
             <div className="absolute inset-0 bg-accent/5 rounded-full blur-3xl opacity-40 group-hover:opacity-60 transition-opacity duration-700 pointer-events-none" />
 
             <div className="relative z-10 flex items-center justify-between">
@@ -118,7 +154,13 @@ export default function AboutPage() {
         </div>
 
         {/* Closing Action */}
-        <motion.div variants={itemVariants} className="mt-20 sm:mt-32 border-t border-foreground/10 pt-16 sm:pt-20 text-center">
+        <motion.div
+          ref={ctaRef}
+          initial={{ opacity: 0, y: 40 }}
+          animate={ctaInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
+          className="mt-20 sm:mt-32 border-t border-foreground/10 pt-16 sm:pt-20 text-center"
+        >
           <p className="font-sans text-xs tracking-[0.3em] uppercase text-accent mb-3 sm:mb-4">Experience Yora</p>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl mb-6 sm:mb-8">Ready to elevate your baseline?</h2>
           <Link
@@ -130,6 +172,6 @@ export default function AboutPage() {
         </motion.div>
 
       </div>
-    </motion.main>
+    </main>
   );
 }

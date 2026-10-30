@@ -1,7 +1,7 @@
 'use client';
 
 import { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import Link from 'next/link';
 
 const steps = [
@@ -27,36 +27,47 @@ const steps = [
 
 export default function TheRitualSection() {
   const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { once: true, margin: '-10%' });
+  const inView = useInView(ref, { once: true, margin: '-8%' });
+
+  const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] });
+  const bgY = useTransform(scrollYProgress, [0, 1], ['-15px', '15px']);
 
   return (
     <section ref={ref} className="relative w-full py-16 sm:py-24 md:py-36 px-4 sm:px-6 lg:px-24 bg-background border-t border-foreground/5 overflow-hidden">
+      {/* Parallax ambient */}
+      <motion.div
+        style={{ y: bgY }}
+        className="absolute top-0 right-0 w-[400px] h-[400px] bg-accent/3 rounded-full blur-[160px] pointer-events-none"
+      />
+
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 md:mb-24 gap-6">
           <div>
             <motion.p
-              initial={{ opacity: 0, y: 15 }}
+              initial={{ opacity: 0, y: 18 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               className="font-sans text-xs tracking-[0.3em] uppercase text-accent mb-4"
             >
               The Daily Protocol
             </motion.p>
-            <motion.h2
-              initial={{ opacity: 0, y: 25 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.1 }}
-              className="font-serif text-3xl sm:text-5xl md:text-6xl text-foreground leading-tight"
-            >
-              The Morning Ritual. <br />
-              <span className="italic text-foreground/60">Two capsules. Pure intent.</span>
-            </motion.h2>
+            <div className="overflow-hidden">
+              <motion.h2
+                initial={{ opacity: 0, y: 50 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.8, delay: 0.12, ease: [0.16, 1, 0.3, 1] }}
+                className="font-serif text-3xl sm:text-5xl md:text-6xl text-foreground leading-tight"
+              >
+                The Morning Ritual. <br />
+                <span className="italic text-foreground/60">Two capsules. Pure intent.</span>
+              </motion.h2>
+            </div>
           </div>
 
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={inView ? { opacity: 1 } : {}}
-            transition={{ duration: 0.8, delay: 0.3 }}
+            initial={{ opacity: 0, x: 30 }}
+            animate={inView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.7, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
           >
             <Link
               href="/ritual"
@@ -68,26 +79,35 @@ export default function TheRitualSection() {
           </motion.div>
         </div>
 
-        {/* 3 Steps */}
+        {/* 3 Steps — alternating slide directions */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-          {steps.map((s, i) => (
-            <motion.div
-              key={s.time}
-              initial={{ opacity: 0, y: 30 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.2 + i * 0.15, ease: [0.16, 1, 0.3, 1] }}
-              className="p-6 sm:p-8 md:p-10 rounded-2xl border border-foreground/10 bg-foreground/[0.02] hover:bg-foreground/[0.04] transition-all duration-300 relative group spotlight-card"
-            >
-              <span className="font-mono text-xs tracking-widest text-accent uppercase block mb-4 sm:mb-6 font-semibold">
-                {s.time} • Step 0{i + 1}
-              </span>
-              <h3 className="font-serif text-xl sm:text-2xl text-foreground mb-3 sm:mb-4">{s.title}</h3>
-              <p className="font-sans text-xs sm:text-sm text-foreground/70 leading-relaxed mb-6">{s.desc}</p>
-              <div className="pt-4 border-t border-foreground/5 text-[11px] sm:text-xs font-sans text-foreground/45">
-                {s.detail}
-              </div>
-            </motion.div>
-          ))}
+          {steps.map((s, i) => {
+            const xStart = i === 0 ? -40 : i === 2 ? 40 : 0;
+            const yStart = i === 1 ? 50 : 30;
+            return (
+              <motion.div
+                key={s.time}
+                initial={{ opacity: 0, y: yStart, x: xStart }}
+                animate={inView ? { opacity: 1, y: 0, x: 0 } : {}}
+                transition={{ duration: 0.7, delay: 0.3 + i * 0.13, ease: [0.16, 1, 0.3, 1] }}
+                className="p-6 sm:p-8 md:p-10 rounded-2xl border border-foreground/10 bg-foreground/[0.02] hover:bg-foreground/[0.04] transition-all duration-300 relative group spotlight-card"
+              >
+                <motion.span
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={inView ? { opacity: 1, scale: 1 } : {}}
+                  transition={{ duration: 0.4, delay: 0.45 + i * 0.13 }}
+                  className="font-mono text-xs tracking-widest text-accent uppercase block mb-4 sm:mb-6 font-semibold"
+                >
+                  {s.time} • Step 0{i + 1}
+                </motion.span>
+                <h3 className="font-serif text-xl sm:text-2xl text-foreground mb-3 sm:mb-4">{s.title}</h3>
+                <p className="font-sans text-xs sm:text-sm text-foreground/70 leading-relaxed mb-6">{s.desc}</p>
+                <div className="pt-4 border-t border-foreground/5 text-[11px] sm:text-xs font-sans text-foreground/45">
+                  {s.detail}
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

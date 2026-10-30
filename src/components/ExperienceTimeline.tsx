@@ -1,7 +1,7 @@
 'use client';
 
 import { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 
 const phases = [
   {
@@ -32,54 +32,70 @@ const phases = [
 
 export default function ExperienceTimeline() {
   const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { once: true, margin: '-10%' });
+  const inView = useInView(ref, { once: true, margin: '-8%' });
+
+  const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] });
+  const glowX = useTransform(scrollYProgress, [0, 1], ['10%', '-10%']);
 
   return (
     <section ref={ref} className="relative w-full py-16 sm:py-24 md:py-36 px-4 sm:px-6 lg:px-24 bg-background border-t border-foreground/5 overflow-hidden">
-      {/* Background ambient gradient */}
-      <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[320px] sm:w-[500px] h-[320px] sm:h-[500px] bg-accent/4 rounded-full blur-[120px] sm:blur-[160px] pointer-events-none" />
+      {/* Parallax background glow */}
+      <motion.div
+        style={{ x: glowX }}
+        className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[320px] sm:w-[500px] h-[320px] sm:h-[500px] bg-accent/4 rounded-full blur-[120px] sm:blur-[160px] pointer-events-none"
+      />
 
       <div className="max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-20 md:mb-28">
           <motion.p
-            initial={{ opacity: 0, y: 15 }}
+            initial={{ opacity: 0, y: 18 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="font-sans text-xs tracking-[0.3em] uppercase text-accent mb-4"
           >
             The 30-Day Arc
           </motion.p>
 
-          <motion.h2
-            initial={{ opacity: 0, y: 25 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            className="font-serif text-3xl sm:text-5xl md:text-6xl text-foreground leading-tight"
-          >
-            How your cells adapt. <br />
-            <span className="italic text-foreground/60">Compounding daily.</span>
-          </motion.h2>
+          <div className="overflow-hidden">
+            <motion.h2
+              initial={{ opacity: 0, y: 50 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.12, ease: [0.16, 1, 0.3, 1] }}
+              className="font-serif text-3xl sm:text-5xl md:text-6xl text-foreground leading-tight"
+            >
+              How your cells adapt. <br />
+              <span className="italic text-foreground/60">Compounding daily.</span>
+            </motion.h2>
+          </div>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.7, delay: 0.28, ease: [0.16, 1, 0.3, 1] }}
             className="font-sans text-xs sm:text-sm md:text-base text-foreground/60 mt-4 sm:mt-6 max-w-xl mx-auto leading-relaxed"
           >
             Natural botanicals work through biological adaptation, not central nervous stimulants. Here is what happens as active compounds accumulate in your system.
           </motion.p>
         </div>
 
-        {/* 3-phase progression cards */}
+        {/* 3-phase progression cards — slide from bottom with stagger */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
           {phases.map((phase, i) => (
             <motion.div
               key={phase.period}
-              initial={{ opacity: 0, y: 35 }}
+              initial={{ opacity: 0, y: 50 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.2 + i * 0.15, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 0.7, delay: 0.3 + i * 0.14, ease: [0.16, 1, 0.3, 1] }}
               className="relative p-6 sm:p-8 md:p-10 rounded-2xl border border-foreground/10 bg-foreground/[0.02] flex flex-col justify-between group hover:bg-foreground/[0.04] transition-all duration-500 spotlight-card"
             >
+              {/* Accent left border reveal */}
+              <motion.div
+                initial={{ scaleY: 0 }}
+                animate={inView ? { scaleY: 1 } : {}}
+                transition={{ duration: 0.5, delay: 0.5 + i * 0.14, ease: [0.16, 1, 0.3, 1] }}
+                className="absolute left-0 top-6 bottom-6 w-[2px] bg-accent/30 rounded-full origin-top"
+              />
+
               <div>
                 <div className="flex items-center justify-between mb-6 sm:mb-8 pb-4 border-b border-foreground/5">
                   <span className="font-mono text-xs tracking-widest text-accent uppercase font-medium">
