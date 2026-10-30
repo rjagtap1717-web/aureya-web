@@ -49,20 +49,19 @@ export default function ThePromise() {
           className="w-6 h-[1px] bg-accent/40 mb-8 origin-left"
         />
 
-        <div className="space-y-1 md:space-y-2 overflow-hidden">
+        <div className="space-y-1 md:space-y-2">
           {lines.map((line, i) => (
-            <div key={i} className="overflow-hidden">
-              <motion.h2
-                initial={{ opacity: 0, y: 60 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.8, delay: 0.2 + i * 0.13, ease: [0.16, 1, 0.3, 1] }}
-                className={`font-serif text-4xl sm:text-6xl md:text-8xl lg:text-9xl leading-[0.98] tracking-tight ${
-                  line.style.includes('italic') ? 'italic' : ''
-                } ${line.style.includes('accent') ? 'text-accent' : 'text-foreground'}`}
-              >
-                {line.text}
-              </motion.h2>
-            </div>
+            <motion.h2
+              key={i}
+              initial={{ opacity: 0, y: 50 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.85, delay: 0.18 + i * 0.12, ease: [0.16, 1, 0.3, 1] }}
+              className={`font-serif text-4xl sm:text-6xl md:text-8xl lg:text-9xl leading-[1.02] tracking-tight ${
+                line.style.includes('italic') ? 'italic' : ''
+              } ${line.style.includes('accent') ? 'text-accent' : 'text-foreground'}`}
+            >
+              {line.text}
+            </motion.h2>
           ))}
         </div>
 
