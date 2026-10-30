@@ -55,10 +55,14 @@ export default function AboutPage() {
               </p>
               
               <div className="pt-8 flex flex-col sm:flex-row gap-8">
-                {/* Aditya Jadhav - Portrait Placeholder */}
+                {/* Aditya Jadhav */}
                 <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 bg-gradient-to-br from-foreground/10 to-foreground/5 rounded-full overflow-hidden border border-foreground/15 flex items-center justify-center relative shadow-inner">
-                    <span className="font-serif text-base tracking-widest text-accent font-semibold">AJ</span>
+                  <div className="w-16 h-16 rounded-full overflow-hidden border border-foreground/15 shadow-md bg-foreground/5 shrink-0">
+                    <img 
+                      src="/aditya.jpeg" 
+                      alt="Aditya Jadhav" 
+                      className="w-full h-full object-cover object-center" 
+                    />
                   </div>
                   <div>
                     <span className="font-serif text-xl italic text-foreground block">Aditya Jadhav</span>
@@ -68,8 +72,12 @@ export default function AboutPage() {
                 
                 {/* Rushikesh Jagtap */}
                 <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 bg-foreground/5 rounded-full overflow-hidden border border-foreground/15 shadow-inner">
-                    <img src="/rushikesh.jpeg" alt="Rushikesh Jagtap" className="w-full h-full object-cover" />
+                  <div className="w-16 h-16 rounded-full overflow-hidden border border-foreground/15 shadow-md bg-foreground/5 shrink-0">
+                    <img 
+                      src="/rushikesh.jpeg" 
+                      alt="Rushikesh Jagtap" 
+                      className="w-full h-full object-cover object-center" 
+                    />
                   </div>
                   <div>
                     <span className="font-serif text-xl italic text-foreground block">Rushikesh Jagtap</span>
