@@ -30,9 +30,9 @@ export default function TheRitualSection() {
   const inView = useInView(ref, { once: true, margin: '-10%' });
 
   return (
-    <section ref={ref} className="relative w-full py-28 md:py-36 px-6 lg:px-24 bg-background border-t border-foreground/5 overflow-hidden">
+    <section ref={ref} className="relative w-full py-16 sm:py-24 md:py-36 px-4 sm:px-6 lg:px-24 bg-background border-t border-foreground/5 overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 md:mb-24 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 md:mb-24 gap-6">
           <div>
             <motion.p
               initial={{ opacity: 0, y: 15 }}
@@ -46,10 +46,10 @@ export default function TheRitualSection() {
               initial={{ opacity: 0, y: 25 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="font-serif text-4xl sm:text-5xl md:text-6xl text-foreground leading-tight"
+              className="font-serif text-3xl sm:text-5xl md:text-6xl text-foreground leading-tight"
             >
               The Morning Ritual. <br />
-              <span className="italic text-foreground/60">One capsule. Pure intent.</span>
+              <span className="italic text-foreground/60">Two capsules. Pure intent.</span>
             </motion.h2>
           </div>
 
@@ -69,21 +69,21 @@ export default function TheRitualSection() {
         </div>
 
         {/* 3 Steps */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
           {steps.map((s, i) => (
             <motion.div
               key={s.time}
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.2 + i * 0.15, ease: [0.16, 1, 0.3, 1] }}
-              className="p-8 md:p-10 rounded-2xl border border-foreground/10 bg-foreground/[0.02] hover:bg-foreground/[0.04] transition-all duration-300 relative group spotlight-card"
+              className="p-6 sm:p-8 md:p-10 rounded-2xl border border-foreground/10 bg-foreground/[0.02] hover:bg-foreground/[0.04] transition-all duration-300 relative group spotlight-card"
             >
-              <span className="font-mono text-xs tracking-widest text-accent uppercase block mb-6 font-semibold">
+              <span className="font-mono text-xs tracking-widest text-accent uppercase block mb-4 sm:mb-6 font-semibold">
                 {s.time} • Step 0{i + 1}
               </span>
-              <h3 className="font-serif text-2xl text-foreground mb-4">{s.title}</h3>
-              <p className="font-sans text-sm text-foreground/70 leading-relaxed mb-6">{s.desc}</p>
-              <div className="pt-4 border-t border-foreground/5 text-xs font-sans text-foreground/45">
+              <h3 className="font-serif text-xl sm:text-2xl text-foreground mb-3 sm:mb-4">{s.title}</h3>
+              <p className="font-sans text-xs sm:text-sm text-foreground/70 leading-relaxed mb-6">{s.desc}</p>
+              <div className="pt-4 border-t border-foreground/5 text-[11px] sm:text-xs font-sans text-foreground/45">
                 {s.detail}
               </div>
             </motion.div>

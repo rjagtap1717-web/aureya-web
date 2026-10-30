@@ -26,6 +26,17 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [menuOpen]);
+
   return (
     <>
       <motion.header
@@ -38,9 +49,9 @@ export default function Navbar() {
             : 'bg-transparent'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between h-16 md:h-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 flex items-center justify-between h-16 md:h-20">
           {/* Logo Lockup */}
-          <Link href="/" className="flex items-center gap-2.5 group">
+          <Link href="/" className="flex items-center gap-2.5 group py-2">
             <img src="/yora-emblem.png" alt="yora logo" className="w-7 h-7 md:w-8 md:h-8 object-contain transition-transform duration-300 group-hover:rotate-12" />
             <YoraWordmark className="h-6 md:h-7 w-auto text-foreground group-hover:text-accent transition-colors duration-300" />
             <span className="sr-only">yora</span>
@@ -76,13 +87,13 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* Mobile hamburger */}
+          {/* Mobile hamburger (Touch Target >= 44x44px) */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden text-foreground/70 hover:text-foreground transition-colors"
+            className="md:hidden w-11 h-11 -mr-2 flex items-center justify-center text-foreground/80 hover:text-foreground transition-colors"
             aria-label="Toggle menu"
           >
-            {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
       </motion.header>
@@ -94,46 +105,70 @@ export default function Navbar() {
             initial={{ opacity: 0, x: '100%' }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
-            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-0 z-40 bg-background/95 backdrop-blur-2xl flex flex-col items-center justify-center gap-10"
+            transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+            className="fixed inset-0 z-50 bg-background/98 backdrop-blur-2xl flex flex-col justify-between p-6 sm:p-10"
           >
-            {navLinks.map((link, i) => (
-              <motion.div
-                key={link.href}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.06, duration: 0.4 }}
+            {/* Drawer Header */}
+            <div className="flex items-center justify-between w-full h-16 border-b border-foreground/10 pb-4">
+              <Link 
+                href="/" 
+                onClick={() => setMenuOpen(false)} 
+                className="flex items-center gap-2.5"
               >
-                <Link
-                  href={link.href}
-                  onClick={() => setMenuOpen(false)}
-                  className={`font-serif text-4xl tracking-tight transition-colors ${
-                    pathname === link.href ? 'text-accent' : 'text-foreground/70 hover:text-foreground'
-                  }`}
+                <img src="/yora-emblem.png" alt="yora logo" className="w-7 h-7 object-contain" />
+                <YoraWordmark className="h-6 w-auto text-foreground" />
+              </Link>
+              <button
+                onClick={() => setMenuOpen(false)}
+                className="w-11 h-11 flex items-center justify-center -mr-2 text-foreground/80 hover:text-foreground"
+                aria-label="Close menu"
+              >
+                <X className="w-6 h-6" />
+              </button>
+            </div>
+
+            {/* Nav Links */}
+            <div className="flex flex-col items-center justify-center gap-6 my-auto">
+              {navLinks.map((link, i) => (
+                <motion.div
+                  key={link.href}
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.05, duration: 0.35 }}
                 >
-                  {link.label}
-                </Link>
-              </motion.div>
-            ))}
+                  <Link
+                    href={link.href}
+                    onClick={() => setMenuOpen(false)}
+                    className={`font-serif text-3xl sm:text-4xl tracking-tight transition-colors py-2 px-4 block text-center ${
+                      pathname === link.href ? 'text-accent' : 'text-foreground/80 hover:text-foreground'
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Bottom Actions */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: navLinks.length * 0.06, duration: 0.4 }}
-              className="flex flex-col items-center gap-4 mt-4"
+              transition={{ delay: 0.25, duration: 0.35 }}
+              className="flex flex-col items-center gap-4 w-full pt-6 border-t border-foreground/10"
             >
               <Link
                 href="/shop"
                 onClick={() => setMenuOpen(false)}
-                className="font-sans text-sm tracking-[0.2em] uppercase px-8 py-4 bg-foreground text-background inline-block hover:bg-accent hover:text-white transition-all duration-300"
+                className="w-full max-w-xs font-sans text-xs tracking-[0.2em] uppercase py-4 bg-foreground text-background text-center hover:bg-accent hover:text-white transition-all duration-300"
               >
-                Shop ↗
+                Shop The Cellular Reset ↗
               </Link>
               <a
                 href="https://www.instagram.com/yora.wellness?psln=cjFkc2kxZnl5NG1j&utm_source=qr"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setMenuOpen(false)}
-                className="font-sans text-xs tracking-[0.2em] uppercase text-foreground/50 hover:text-accent transition-colors duration-300 flex items-center gap-1.5 pt-2"
+                className="font-sans text-xs tracking-[0.2em] uppercase text-foreground/50 hover:text-accent transition-colors duration-300 flex items-center gap-1.5 py-2"
               >
                 <span>@yora.wellness</span>
                 <span>↗</span>

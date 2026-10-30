@@ -36,9 +36,9 @@ export default function InstagramFeed() {
   const instagramUrl = 'https://www.instagram.com/yora.wellness?psln=cjFkc2kxZnl5NG1j&utm_source=qr';
 
   return (
-    <section ref={ref} className="relative w-full py-28 md:py-36 px-6 lg:px-24 bg-background border-t border-foreground/5 overflow-hidden">
+    <section ref={ref} className="relative w-full py-16 sm:py-24 md:py-36 px-4 sm:px-6 lg:px-24 bg-background border-t border-foreground/5 overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 md:mb-20 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 md:mb-20 gap-6">
           <div>
             <motion.p
               initial={{ opacity: 0, y: 15 }}
@@ -52,7 +52,7 @@ export default function InstagramFeed() {
               initial={{ opacity: 0, y: 25 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="font-serif text-4xl sm:text-5xl md:text-6xl text-foreground leading-tight"
+              className="font-serif text-3xl sm:text-5xl md:text-6xl text-foreground leading-tight"
             >
               Follow the Journey. <br />
               <span className="italic text-foreground/60">@yora.wellness</span>
@@ -82,7 +82,7 @@ export default function InstagramFeed() {
         </div>
 
         {/* Post Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {posts.map((post, i) => (
             <motion.a
               key={i}
@@ -92,7 +92,7 @@ export default function InstagramFeed() {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.15 + i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className={`p-8 rounded-3xl border border-foreground/10 ${post.bg} flex flex-col justify-between group hover:border-accent/40 hover:-translate-y-1 transition-all duration-500 min-h-[300px] shadow-lg`}
+              className={`p-6 sm:p-8 rounded-3xl border border-foreground/10 ${post.bg} flex flex-col justify-between group hover:border-accent/40 hover:-translate-y-1 transition-all duration-500 min-h-[250px] sm:min-h-[300px] shadow-lg`}
             >
               <div className="flex items-center justify-between">
                 <span className="font-sans text-[10px] tracking-widest uppercase text-accent font-mono">

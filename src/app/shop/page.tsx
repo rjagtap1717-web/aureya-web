@@ -10,15 +10,15 @@ export default function ShopPage() {
       animate={{ opacity: 1, filter: 'blur(0px)' }}
       exit={{ opacity: 0, filter: 'blur(10px)' }}
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-      className="min-h-[100dvh] bg-background text-foreground pt-32 pb-24"
+      className="min-h-[100dvh] bg-background text-foreground pt-28 sm:pt-32 pb-20 sm:pb-24"
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-24">
-        <p className="font-sans text-xs tracking-[0.3em] uppercase text-foreground/40 mb-4">Acquire</p>
-        <h1 className="font-serif text-5xl md:text-7xl text-foreground mb-16">The Standard.</h1>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-24">
+        <p className="font-sans text-xs tracking-[0.3em] uppercase text-foreground/40 mb-3 sm:mb-4">Acquire</p>
+        <h1 className="font-serif text-3xl sm:text-5xl md:text-7xl text-foreground mb-10 sm:mb-16">The Standard.</h1>
 
-        <div className="flex flex-col lg:flex-row gap-16 items-start">
+        <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-start">
           {/* Visual Asset Side */}
-          <div className="flex-1 w-full flex items-center justify-center bg-foreground/5 rounded-2xl aspect-[3/4] md:aspect-auto md:h-[600px] relative overflow-hidden border border-foreground/10 shadow-2xl">
+          <div className="flex-1 w-full flex items-center justify-center bg-foreground/5 rounded-2xl aspect-[4/5] sm:aspect-square md:aspect-auto md:h-[600px] relative overflow-hidden border border-foreground/10 shadow-2xl">
             <motion.img
               src="/cordybotmkup.jpeg"
               alt="Yora Cordyceps Militaris Capsules (60 Capsules)"
@@ -32,13 +32,13 @@ export default function ShopPage() {
 
           {/* Checkout Side */}
           <div className="flex-1 w-full max-w-lg">
-            <p className="font-sans text-sm leading-relaxed text-foreground/70 mb-10">
+            <p className="font-sans text-xs sm:text-sm leading-relaxed text-foreground/70 mb-8 sm:mb-10">
               Pure Cordyceps militaris extract, built for steady energy and focus throughout the day. Every capsule is hermetically sealed to keep the active compounds perfectly stable.
             </p>
 
             {/* Single Product Card */}
-            <div className="p-8 border border-accent/40 bg-accent/5 rounded-2xl mb-10 relative spotlight-card">
-              <div className="flex items-start justify-between mb-4">
+            <div className="p-5 sm:p-8 border border-accent/40 bg-accent/5 rounded-2xl mb-8 sm:mb-10 relative spotlight-card">
+              <div className="flex items-start justify-between mb-4 gap-2">
                 <div>
                   <span className="font-mono text-[10px] uppercase tracking-widest text-accent font-semibold block mb-1">
                     Single Flagship Edition
@@ -48,9 +48,9 @@ export default function ShopPage() {
                     60 Capsules • 30-Day Protocol (2 Daily)
                   </p>
                 </div>
-                <div className="text-right">
-                  <span className="font-sans text-2xl font-semibold text-foreground">₹1,499</span>
-                  <span className="block font-sans text-[11px] text-foreground/40 mt-0.5">Free Delivery</span>
+                <div className="text-right shrink-0">
+                  <span className="font-sans text-xl sm:text-2xl font-semibold text-foreground">₹1,499</span>
+                  <span className="block font-sans text-[10px] sm:text-[11px] text-foreground/40 mt-0.5">Free Delivery</span>
                 </div>
               </div>
 
@@ -61,14 +61,14 @@ export default function ShopPage() {
             </div>
 
             <div className="mb-8 font-sans text-xs tracking-wide text-foreground/50 flex flex-col gap-2">
-              <span className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-accent" /> Free shipping across India.</span>
-              <span className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-accent" /> Dispatch within 24 hours.</span>
-              <span className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-accent" /> Third-party lab verified HPLC potency.</span>
+              <span className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-accent shrink-0" /> Free shipping across India.</span>
+              <span className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-accent shrink-0" /> Dispatch within 24 hours.</span>
+              <span className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-accent shrink-0" /> Third-party lab verified HPLC potency.</span>
             </div>
 
             <Checkout />
 
-            <div className="mt-8 pt-8 border-t border-foreground/10 flex items-center gap-6 opacity-60 grayscale">
+            <div className="mt-8 pt-8 border-t border-foreground/10 flex flex-wrap items-center gap-4 sm:gap-6 opacity-60 grayscale">
               <span className="font-sans text-[10px] tracking-widest uppercase">Lab Tested</span>
               <span className="font-sans text-[10px] tracking-widest uppercase">India Made</span>
               <span className="font-sans text-[10px] tracking-widest uppercase">Secure Checkout</span>

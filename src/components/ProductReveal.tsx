@@ -30,10 +30,10 @@ export default function ProductReveal() {
     <section 
       ref={ref}
       id="product-reveal"
-      className="relative w-full py-28 md:py-36 px-6 lg:px-24 bg-background border-t border-foreground/5 overflow-hidden"
+      className="relative w-full py-16 sm:py-24 md:py-36 px-4 sm:px-6 lg:px-24 bg-background border-t border-foreground/5 overflow-hidden"
     >
       {/* Ambient background light */}
-      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-accent/5 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-72 sm:w-96 h-72 sm:h-96 bg-accent/5 rounded-full blur-[100px] sm:blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto">
         <motion.p
@@ -49,13 +49,13 @@ export default function ProductReveal() {
           initial={{ opacity: 0, y: 25 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.1 }}
-          className="font-serif text-4xl sm:text-5xl md:text-6xl text-foreground max-w-3xl leading-tight mb-16 md:mb-24"
+          className="font-serif text-3xl sm:text-5xl md:text-6xl text-foreground max-w-3xl leading-tight mb-12 sm:mb-16 md:mb-24"
         >
           Cordyceps Militaris Capsules. <br />
           <span className="italic text-foreground/60">Designed for cellular optimization.</span>
         </motion.h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-20 items-center">
           {/* Bottle on the LEFT */}
           <motion.div
             initial={{ opacity: 0, scale: 0.94 }}
@@ -63,7 +63,7 @@ export default function ProductReveal() {
             transition={{ duration: 0.9, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-6 w-full"
           >
-            <div className="relative aspect-[4/5] sm:aspect-square md:aspect-[4/5] rounded-3xl overflow-hidden bg-gradient-to-b from-foreground/[0.04] to-foreground/[0.08] border border-foreground/10 shadow-2xl group flex items-center justify-center p-8">
+            <div className="relative aspect-[4/5] sm:aspect-square md:aspect-[4/5] rounded-3xl overflow-hidden bg-gradient-to-b from-foreground/[0.04] to-foreground/[0.08] border border-foreground/10 shadow-2xl group flex items-center justify-center p-4 sm:p-8">
               {/* Soft center backlight */}
               <div className="absolute inset-0 bg-accent/8 rounded-full blur-3xl opacity-40 group-hover:opacity-60 transition-opacity duration-700" />
               
@@ -74,9 +74,9 @@ export default function ProductReveal() {
               />
 
               {/* Minimal dosage tag */}
-              <div className="absolute bottom-6 left-6 right-6 z-20 flex items-center justify-between px-5 py-3 rounded-2xl bg-background/80 backdrop-blur-md border border-foreground/10 text-xs font-sans">
-                <span className="text-foreground/80 font-medium">Daily Serving</span>
-                <span className="text-accent font-mono tracking-wider">2 Capsules Daily</span>
+              <div className="absolute bottom-3 left-3 right-3 sm:bottom-6 sm:left-6 sm:right-6 z-20 flex items-center justify-between px-4 py-2.5 sm:px-5 sm:py-3 rounded-2xl bg-background/85 backdrop-blur-md border border-foreground/10 text-xs font-sans">
+                <span className="text-foreground/80 font-medium text-[11px] sm:text-xs">Daily Serving</span>
+                <span className="text-accent font-mono tracking-wider text-[11px] sm:text-xs">2 Capsules Daily</span>
               </div>
             </div>
           </motion.div>
@@ -87,24 +87,24 @@ export default function ProductReveal() {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="font-sans text-base md:text-lg leading-relaxed text-foreground/70 mb-12"
+              className="font-sans text-sm sm:text-base md:text-lg leading-relaxed text-foreground/70 mb-8 sm:mb-12"
             >
               Yora extract is derived exclusively from cultivated, sterile fruiting bodies of{' '}
               <span className="text-foreground font-medium">Cordyceps militaris</span>. Unlike wild harvest or grain-based powders, our strain delivers guaranteed active cordycepin at a clinical baseline.
             </motion.p>
 
             {/* 3 Core Highlight Specs */}
-            <div className="space-y-6 mb-12">
+            <div className="space-y-4 sm:space-y-6 mb-8 sm:mb-12">
               {specs.map((spec, i) => (
                 <motion.div
                   key={spec.label}
                   initial={{ opacity: 0, x: 20 }}
                   animate={inView ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.7, delay: 0.35 + i * 0.1 }}
-                  className="p-6 rounded-2xl border border-foreground/10 bg-foreground/[0.02] hover:bg-foreground/[0.04] transition-all duration-300 spotlight-card"
+                  className="p-5 sm:p-6 rounded-2xl border border-foreground/10 bg-foreground/[0.02] hover:bg-foreground/[0.04] transition-all duration-300 spotlight-card"
                 >
                   <div className="flex items-baseline justify-between mb-2">
-                    <span className="font-sans text-xs tracking-widest uppercase text-foreground/50">
+                    <span className="font-sans text-[10px] sm:text-xs tracking-widest uppercase text-foreground/50">
                       {spec.label}
                     </span>
                     <span className="font-serif text-xl sm:text-2xl text-accent font-semibold">
@@ -123,15 +123,15 @@ export default function ProductReveal() {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, delay: 0.7 }}
-              className="flex flex-col sm:flex-row items-center gap-6"
+              className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6"
             >
               <Link
                 href="/shop"
-                className="w-full sm:w-auto px-10 py-4 bg-foreground text-background font-sans text-xs tracking-[0.25em] uppercase hover:bg-accent hover:text-white transition-all duration-300 text-center shadow-lg"
+                className="w-full sm:w-auto px-8 sm:px-10 py-4 bg-foreground text-background font-sans text-xs tracking-[0.25em] uppercase hover:bg-accent hover:text-white transition-all duration-300 text-center shadow-lg"
               >
                 Acquire The Ritual ↗
               </Link>
-              <span className="font-sans text-xs tracking-wider text-foreground/40">
+              <span className="font-sans text-xs tracking-wider text-foreground/40 text-center">
                 ₹1,499 • Free Delivery Across India
               </span>
             </motion.div>

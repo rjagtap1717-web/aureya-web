@@ -9,12 +9,12 @@ export default function ScienceTeaser() {
   const inView = useInView(ref, { once: true, margin: '-10%' });
 
   return (
-    <section ref={ref} className="relative w-full py-28 md:py-36 px-6 lg:px-24 bg-background border-t border-foreground/5 overflow-hidden">
+    <section ref={ref} className="relative w-full py-16 sm:py-24 md:py-36 px-4 sm:px-6 lg:px-24 bg-background border-t border-foreground/5 overflow-hidden">
       {/* Background radial glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-accent/4 rounded-full blur-[180px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] sm:w-[700px] h-[340px] sm:h-[500px] bg-accent/4 rounded-full blur-[120px] sm:blur-[180px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           {/* Science explanation on the LEFT */}
           <div className="lg:col-span-5">
             <motion.p
@@ -30,7 +30,7 @@ export default function ScienceTeaser() {
               initial={{ opacity: 0, y: 25 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="font-serif text-4xl sm:text-5xl text-foreground leading-tight mb-6"
+              className="font-serif text-3xl sm:text-5xl text-foreground leading-tight mb-4 sm:mb-6"
             >
               The Science of <br />
               <span className="italic text-foreground/60">ATP Upregulation.</span>
@@ -40,7 +40,7 @@ export default function ScienceTeaser() {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="font-sans text-sm md:text-base text-foreground/70 leading-relaxed mb-6"
+              className="font-sans text-xs sm:text-sm md:text-base text-foreground/70 leading-relaxed mb-6"
             >
               Cordycepin (3&apos;-deoxyadenosine) is structurally analogous to adenosine, the primary cellular signaling molecule. Once consumed, it integrates directly into your mitochondrial energy cycle, upregulating Adenosine Triphosphate (ATP) production by up to 28%.
             </motion.p>
@@ -49,13 +49,13 @@ export default function ScienceTeaser() {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="p-6 rounded-2xl bg-foreground/[0.03] border border-foreground/10 mb-8 space-y-3"
+              className="p-4 sm:p-6 rounded-2xl bg-foreground/[0.03] border border-foreground/10 mb-6 sm:mb-8 space-y-2 sm:space-y-3"
             >
-              <div className="flex items-center gap-3">
-                <span className="w-2 h-2 rounded-full bg-accent" />
-                <span className="font-sans text-xs uppercase tracking-wider text-foreground font-medium">Standardized Cordycepin: 10+ mg/g</span>
+              <div className="flex items-center gap-2.5 sm:gap-3">
+                <span className="w-2 h-2 rounded-full bg-accent shrink-0" />
+                <span className="font-sans text-[11px] sm:text-xs uppercase tracking-wider text-foreground font-medium">Standardized Cordycepin: 10+ mg/g</span>
               </div>
-              <p className="font-sans text-xs text-foreground/60 leading-relaxed pl-5">
+              <p className="font-sans text-xs text-foreground/60 leading-relaxed pl-4 sm:pl-5">
                 While standard market cordyceps rarely verify active levels, Yora is the first to guarantee 10+ mg/g active cordycepin in every single batch via third-party HPLC testing.
               </p>
             </motion.div>

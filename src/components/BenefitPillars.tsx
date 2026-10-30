@@ -41,13 +41,13 @@ export default function BenefitPillars() {
   const inView = useInView(ref, { once: true, margin: '-10%' });
 
   return (
-    <section ref={ref} className="relative w-full py-32 px-6 lg:px-24 overflow-hidden">
+    <section ref={ref} className="relative w-full py-16 sm:py-24 md:py-32 px-4 sm:px-6 lg:px-24 overflow-hidden">
       {/* Label */}
       <motion.p
         initial={{ opacity: 0 }}
         animate={inView ? { opacity: 1 } : {}}
         transition={{ duration: 0.6 }}
-        className="font-sans text-xs tracking-[0.3em] uppercase text-foreground/40 mb-20 text-center"
+        className="font-sans text-xs tracking-[0.3em] uppercase text-foreground/40 mb-12 sm:mb-20 text-center"
       >
         Six Pillars of Action
       </motion.p>
@@ -59,13 +59,13 @@ export default function BenefitPillars() {
             initial={{ opacity: 0, y: 30 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="bg-background p-10 lg:p-14 group hover:bg-accent/4 transition-colors duration-500 spotlight-card"
+            className="bg-background p-6 sm:p-10 lg:p-14 group hover:bg-accent/4 transition-colors duration-500 spotlight-card"
           >
-            <div className="mb-8 text-2xl text-accent/70 group-hover:text-accent transition-colors duration-500 font-sans">
+            <div className="mb-6 sm:mb-8 text-2xl text-accent/70 group-hover:text-accent transition-colors duration-500 font-sans">
               {b.glyph}
             </div>
-            <h3 className="font-serif text-2xl text-foreground mb-4">{b.title}</h3>
-            <p className="font-sans text-sm leading-relaxed text-foreground/50">{b.desc}</p>
+            <h3 className="font-serif text-xl sm:text-2xl text-foreground mb-3 sm:mb-4">{b.title}</h3>
+            <p className="font-sans text-xs sm:text-sm leading-relaxed text-foreground/50">{b.desc}</p>
           </motion.div>
         ))}
       </div>

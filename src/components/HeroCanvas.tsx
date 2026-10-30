@@ -98,8 +98,9 @@ export default function HeroCanvas() {
     resize();
     window.addEventListener('resize', resize);
 
-    // Particle Generation: Organic radial spore cloud (750 particles)
-    const numParticles = 750;
+    // Particle Generation: Organic radial spore cloud (optimized for mobile fps)
+    const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+    const numParticles = isMobile ? 320 : 750;
     const particles: SporeParticle[] = [];
 
     for (let i = 0; i < numParticles; i++) {
@@ -332,13 +333,13 @@ export default function HeroCanvas() {
       {/* Centerpiece Brand Logo - Seamlessly Blended */}
       <div 
         ref={logoRef} 
-        className="relative z-10 flex flex-col items-center px-6 text-center select-none max-w-2xl"
+        className="relative z-10 flex flex-col items-center px-4 sm:px-6 text-center select-none max-w-2xl"
       >
         {/* Soft ambient backlight */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 sm:w-96 md:w-[450px] h-72 sm:h-96 md:h-[450px] bg-accent/8 rounded-full blur-[90px] pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 sm:w-96 md:w-[450px] h-64 sm:h-96 md:h-[450px] bg-accent/8 rounded-full blur-[80px] sm:blur-[90px] pointer-events-none" />
 
         {/* Product Eyebrow */}
-        <span className="font-sans text-[10px] sm:text-xs tracking-[0.35em] uppercase text-accent/90 mb-4 inline-block font-medium">
+        <span className="font-sans text-[9px] sm:text-xs tracking-[0.22em] sm:tracking-[0.35em] uppercase text-accent/90 mb-3 sm:mb-4 inline-block font-medium">
           100% Pure Fruiting Body • Cordyceps Militaris
         </span>
 
@@ -347,30 +348,30 @@ export default function HeroCanvas() {
           ref={emblemRef}
           src="/yora-emblem.png" 
           alt="yora emblem" 
-          className="w-24 sm:w-32 md:w-36 lg:w-44 h-auto object-contain will-change-transform drop-shadow-[0_4px_24px_rgba(45,106,79,0.35)]" 
+          className="w-20 sm:w-32 md:w-36 lg:w-44 h-auto object-contain will-change-transform drop-shadow-[0_4px_24px_rgba(45,106,79,0.35)]" 
         />
 
         {/* Wordmark */}
-        <h1 className="mt-3 md:mt-4 flex items-center justify-center">
-          <YoraWordmark className="h-12 sm:h-16 md:h-20 lg:h-24 w-auto text-foreground drop-shadow-sm" />
+        <h1 className="mt-2.5 sm:mt-3 md:mt-4 flex items-center justify-center">
+          <YoraWordmark className="h-10 sm:h-16 md:h-20 lg:h-24 w-auto text-foreground drop-shadow-sm" />
           <span className="sr-only">yora</span>
         </h1>
 
         {/* Tagline */}
-        <p className="mt-5 md:mt-6 font-sans text-xs sm:text-sm tracking-[0.4em] uppercase text-foreground/50">
+        <p className="mt-4 sm:mt-6 font-sans text-[11px] sm:text-sm tracking-[0.35em] sm:tracking-[0.4em] uppercase text-foreground/50">
           Do What Is Right
         </p>
 
         {/* One-line product hook */}
-        <p className="mt-4 font-sans text-xs sm:text-sm tracking-wide text-foreground/70 max-w-md">
+        <p className="mt-3 sm:mt-4 font-sans text-xs sm:text-sm tracking-wide text-foreground/70 max-w-md px-2">
           Natural Cellular Energy. Zero Caffeine. Zero Crashes.
         </p>
       </div>
 
       {/* Bottom Scroll Cue */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-xs font-sans tracking-widest uppercase opacity-40 flex flex-col items-center animate-pulse pointer-events-none z-20">
+      <div className="absolute bottom-5 sm:bottom-6 left-1/2 -translate-x-1/2 text-[10px] sm:text-xs font-sans tracking-widest uppercase opacity-40 flex flex-col items-center animate-pulse pointer-events-none z-20">
         <span>Scroll to Experience</span>
-        <div className="w-[1px] h-8 bg-current mt-2" />
+        <div className="w-[1px] h-6 sm:h-8 bg-current mt-2" />
       </div>
     </div>
   );

@@ -23,24 +23,24 @@ export default function AboutPage() {
       animate="show"
       exit={{ opacity: 0 }}
       variants={containerVariants}
-      className="min-h-[100dvh] bg-background text-foreground pt-32 pb-24"
+      className="min-h-[100dvh] bg-background text-foreground pt-28 sm:pt-32 pb-20 sm:pb-24"
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-24">
         
-        <motion.div variants={itemVariants} className="mb-24 md:mb-32">
+        <motion.div variants={itemVariants} className="mb-16 sm:mb-24 md:mb-32">
           <p className="font-sans text-xs tracking-[0.3em] uppercase text-accent mb-4">The Standard</p>
-          <h1 className="font-serif text-5xl md:text-7xl text-foreground leading-tight max-w-4xl">
+          <h1 className="font-serif text-3xl sm:text-5xl md:text-7xl text-foreground leading-tight max-w-4xl">
             We built what we couldn&apos;t find. <br />
             <span className="italic text-foreground/70">No compromises.</span>
           </h1>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
           
           {/* Founder Note */}
           <motion.div variants={itemVariants} className="lg:col-span-7">
-            <h2 className="font-serif text-3xl mb-8">A Note on Intent</h2>
-            <div className="font-sans text-sm leading-loose text-foreground/70 space-y-6">
+            <h2 className="font-serif text-2xl sm:text-3xl mb-6 sm:mb-8">A Note on Intent</h2>
+            <div className="font-sans text-xs sm:text-sm leading-relaxed sm:leading-loose text-foreground/70 space-y-4 sm:space-y-6">
               <p>
                 The wellness industry is flooded with mycelium grown on grain: mostly starch, devoid of active compounds, packaged in unsealed containers that degrade whatever potency remains.
               </p>
@@ -54,10 +54,10 @@ export default function AboutPage() {
                 It is not for everyone. It is for those who demand their baseline be elevated, systematically and scientifically.
               </p>
               
-              <div className="pt-8 flex flex-col sm:flex-row gap-8">
+              <div className="pt-6 sm:pt-8 flex flex-col sm:flex-row gap-6 sm:gap-8">
                 {/* Aditya Jadhav */}
                 <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 rounded-full overflow-hidden border border-foreground/15 shadow-md bg-foreground/5 shrink-0">
+                  <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden border border-foreground/15 shadow-md bg-foreground/5 shrink-0">
                     <img 
                       src="/aditya.jpeg" 
                       alt="Aditya Jadhav" 
@@ -65,14 +65,14 @@ export default function AboutPage() {
                     />
                   </div>
                   <div>
-                    <span className="font-serif text-xl italic text-foreground block">Aditya Jadhav</span>
+                    <span className="font-serif text-lg sm:text-xl italic text-foreground block">Aditya Jadhav</span>
                     <span className="font-sans text-[10px] tracking-widest uppercase text-accent">Co-Founder</span>
                   </div>
                 </div>
                 
                 {/* Rushikesh Jagtap */}
                 <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 rounded-full overflow-hidden border border-foreground/15 shadow-md bg-foreground/5 shrink-0">
+                  <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden border border-foreground/15 shadow-md bg-foreground/5 shrink-0">
                     <img 
                       src="/rushikesh.jpeg" 
                       alt="Rushikesh Jagtap" 
@@ -80,7 +80,7 @@ export default function AboutPage() {
                     />
                   </div>
                   <div>
-                    <span className="font-serif text-xl italic text-foreground block">Rushikesh Jagtap</span>
+                    <span className="font-serif text-lg sm:text-xl italic text-foreground block">Rushikesh Jagtap</span>
                     <span className="font-sans text-[10px] tracking-widest uppercase text-accent">Co-Founder</span>
                   </div>
                 </div>
@@ -89,7 +89,7 @@ export default function AboutPage() {
           </motion.div>
 
           {/* Editorial Product Vessel Showcase */}
-          <motion.div variants={itemVariants} className="lg:col-span-5 w-full aspect-[4/5] rounded-3xl relative overflow-hidden group border border-foreground/10 bg-gradient-to-b from-foreground/[0.03] to-foreground/[0.08] p-8 flex flex-col justify-between shadow-2xl">
+          <motion.div variants={itemVariants} className="lg:col-span-5 w-full aspect-[4/5] rounded-3xl relative overflow-hidden group border border-foreground/10 bg-gradient-to-b from-foreground/[0.03] to-foreground/[0.08] p-5 sm:p-8 flex flex-col justify-between shadow-2xl">
             <div className="absolute inset-0 bg-accent/5 rounded-full blur-3xl opacity-40 group-hover:opacity-60 transition-opacity duration-700 pointer-events-none" />
 
             <div className="relative z-10 flex items-center justify-between">
@@ -105,25 +105,25 @@ export default function AboutPage() {
               <img
                 src="/cordybotmkup.jpeg"
                 alt="Yora Cordyceps Luxury Bottle"
-                className="w-full max-h-[320px] object-contain filter drop-shadow-[0_16px_32px_rgba(0,0,0,0.5)] transition-transform duration-700 group-hover:scale-105"
+                className="w-full max-h-[260px] sm:max-h-[320px] object-contain filter drop-shadow-[0_16px_32px_rgba(0,0,0,0.5)] transition-transform duration-700 group-hover:scale-105"
               />
             </div>
 
             <div className="relative z-10 pt-4 border-t border-foreground/5 flex items-center justify-between text-xs font-sans text-foreground/50">
               <span>Guaranteed 10+ mg/g</span>
-              <span className="text-accent font-mono text-[11px]">100% Pure Fruiting Body</span>
+              <span className="text-accent font-mono text-[10px] sm:text-[11px]">100% Pure Fruiting Body</span>
             </div>
           </motion.div>
 
         </div>
 
         {/* Closing Action */}
-        <motion.div variants={itemVariants} className="mt-32 border-t border-foreground/10 pt-20 text-center">
-          <p className="font-sans text-xs tracking-[0.3em] uppercase text-accent mb-4">Experience Yora</p>
-          <h2 className="font-serif text-4xl md:text-5xl mb-8">Ready to elevate your baseline?</h2>
+        <motion.div variants={itemVariants} className="mt-20 sm:mt-32 border-t border-foreground/10 pt-16 sm:pt-20 text-center">
+          <p className="font-sans text-xs tracking-[0.3em] uppercase text-accent mb-3 sm:mb-4">Experience Yora</p>
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl mb-6 sm:mb-8">Ready to elevate your baseline?</h2>
           <Link
             href="/shop"
-            className="inline-block bg-foreground text-background hover:bg-accent hover:text-white transition-all duration-300 px-12 py-5 font-sans text-xs tracking-widest uppercase shadow-xl"
+            className="inline-block w-full sm:w-auto bg-foreground text-background hover:bg-accent hover:text-white transition-all duration-300 px-8 sm:px-12 py-4 sm:py-5 font-sans text-xs tracking-widest uppercase shadow-xl text-center"
           >
             Shop The Cellular Reset ↗
           </Link>

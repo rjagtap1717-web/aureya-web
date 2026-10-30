@@ -51,50 +51,58 @@ export default function RitualPage() {
       animate="show"
       exit={{ opacity: 0 }}
       variants={containerVariants}
-      className="min-h-[100dvh] bg-background text-foreground pt-32 pb-24"
+      className="min-h-[100dvh] bg-background text-foreground pt-28 sm:pt-32 pb-20 sm:pb-24"
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-24">
         
         {/* Editorial Header */}
-        <motion.div variants={itemVariants} className="flex flex-col items-center text-center max-w-3xl mx-auto mb-28">
+        <motion.div variants={itemVariants} className="flex flex-col items-center text-center max-w-3xl mx-auto mb-16 sm:mb-24 md:mb-28">
           <p className="font-sans text-xs tracking-[0.35em] uppercase text-accent mb-4 font-medium">
             The Caffeine-Free Standard
           </p>
-          <h1 className="font-serif text-5xl md:text-7xl text-foreground leading-tight mb-8">
+          <h1 className="font-serif text-3xl sm:text-5xl md:text-7xl text-foreground leading-tight mb-6 sm:mb-8">
             The Anti-Caffeine <br />
             <span className="italic text-foreground/70">Reset.</span>
           </h1>
-          <p className="font-sans text-sm md:text-base leading-relaxed text-foreground/60 max-w-2xl">
+          <p className="font-sans text-xs sm:text-sm md:text-base leading-relaxed text-foreground/60 max-w-2xl">
             Caffeine is a loan against tomorrow. It does not produce energy. It masks biological exhaustion while taxing your adrenals. Yora was engineered to replace synthetic stimulation with pure mitochondrial ATP.
           </p>
         </motion.div>
 
         {/* The Comparison Matrix: Caffeine vs Yora */}
-        <motion.div variants={itemVariants} className="mb-32">
-          <div className="text-center max-w-2xl mx-auto mb-16">
+        <motion.div variants={itemVariants} className="mb-20 sm:mb-32">
+          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
             <span className="font-mono text-xs uppercase tracking-widest text-accent block mb-2">Biological Distinction</span>
-            <h2 className="font-serif text-3xl md:text-4xl">Stimulation vs. Cellular Energy</h2>
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl">Stimulation vs. Cellular Energy</h2>
           </div>
 
-          <div className="rounded-3xl border border-foreground/15 bg-foreground/[0.02] overflow-hidden shadow-2xl">
-            {/* Header Row */}
-            <div className="grid grid-cols-1 md:grid-cols-12 border-b border-foreground/10 bg-foreground/[0.03] p-6 text-xs font-sans tracking-widest uppercase">
-              <div className="md:col-span-3 text-foreground/40 font-mono">Metric</div>
-              <div className="md:col-span-4 text-foreground/40 mt-2 md:mt-0">The Caffeine Loop</div>
-              <div className="md:col-span-5 text-accent mt-2 md:mt-0 font-medium">Yora Cordyceps Standard</div>
+          <div className="rounded-2xl sm:rounded-3xl border border-foreground/15 bg-foreground/[0.02] overflow-hidden shadow-2xl">
+            {/* Header Row (Desktop only) */}
+            <div className="hidden md:grid grid-cols-12 border-b border-foreground/10 bg-foreground/[0.03] p-6 text-xs font-sans tracking-widest uppercase">
+              <div className="col-span-3 text-foreground/40 font-mono">Metric</div>
+              <div className="col-span-4 text-foreground/40">The Caffeine Loop</div>
+              <div className="col-span-5 text-accent font-medium">Yora Cordyceps Standard</div>
             </div>
 
             {/* Comparison Rows */}
-            {comparison.map((row, i) => (
+            {comparison.map((row) => (
               <div
                 key={row.metric}
-                className="grid grid-cols-1 md:grid-cols-12 p-6 border-b border-foreground/5 gap-4 md:gap-0 items-start hover:bg-foreground/[0.02] transition-colors"
+                className="p-5 sm:p-6 border-b border-foreground/5 md:grid md:grid-cols-12 gap-4 md:gap-0 items-start hover:bg-foreground/[0.02] transition-colors"
               >
-                <div className="md:col-span-3 font-serif text-lg text-foreground/90">{row.metric}</div>
-                <div className="md:col-span-4 font-sans text-xs sm:text-sm text-foreground/50 leading-relaxed pr-4">
+                <div className="md:col-span-3 font-serif text-lg text-foreground/90 mb-3 md:mb-0">
+                  {row.metric}
+                </div>
+                <div className="md:col-span-4 font-sans text-xs sm:text-sm text-foreground/60 leading-relaxed pr-0 md:pr-4 mb-3 md:mb-0">
+                  <span className="md:hidden font-mono text-[10px] tracking-widest uppercase text-foreground/40 block mb-1">
+                    The Caffeine Loop:
+                  </span>
                   {row.caffeine}
                 </div>
-                <div className="md:col-span-5 font-sans text-xs sm:text-sm text-foreground/90 leading-relaxed font-medium">
+                <div className="md:col-span-5 font-sans text-xs sm:text-sm text-foreground/95 leading-relaxed font-medium">
+                  <span className="md:hidden font-mono text-[10px] tracking-widest uppercase text-accent block mb-1">
+                    Yora Standard:
+                  </span>
                   {row.yora}
                 </div>
               </div>
@@ -103,23 +111,23 @@ export default function RitualPage() {
         </motion.div>
 
         {/* The Daily Protocol - Harmonized Timings */}
-        <motion.div variants={itemVariants} className="mb-32">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 border-b border-foreground/10 pb-6 gap-6">
+        <motion.div variants={itemVariants} className="mb-20 sm:mb-32">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-16 border-b border-foreground/10 pb-6 gap-6">
             <div>
               <p className="font-sans text-xs tracking-[0.3em] uppercase text-accent mb-2">Daily Architecture</p>
-              <h2 className="font-serif text-3xl md:text-4xl">The Caffeine-Free Morning Protocol</h2>
+              <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl">The Caffeine-Free Morning Protocol</h2>
             </div>
             <p className="font-sans text-xs text-foreground/50 max-w-sm">
               Strictly maintained timings to align natural cortisol rhythms with cellular ATP uptake.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="p-8 md:p-10 rounded-3xl border border-foreground/10 bg-foreground/[0.02] relative group hover:border-accent/30 transition-all">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+            <div className="p-6 sm:p-8 md:p-10 rounded-2xl sm:rounded-3xl border border-foreground/10 bg-foreground/[0.02] relative group hover:border-accent/30 transition-all">
               <span className="font-mono text-xs tracking-widest text-accent uppercase block mb-4 font-semibold">
                 07:00 AM • Step 01
               </span>
-              <h3 className="font-serif text-2xl mb-4 text-foreground">Awaken & Prime</h3>
+              <h3 className="font-serif text-xl sm:text-2xl mb-3 sm:mb-4 text-foreground">Awaken & Prime</h3>
               <p className="font-sans text-xs sm:text-sm text-foreground/70 leading-relaxed mb-6">
                 Consume 2 capsules on an empty stomach with 300ml of pure room-temperature water. Step into direct morning sunlight for 5 to 10 minutes to set your circadian master clock.
               </p>
@@ -128,11 +136,11 @@ export default function RitualPage() {
               </div>
             </div>
 
-            <div className="p-8 md:p-10 rounded-3xl border border-foreground/10 bg-foreground/[0.02] relative group hover:border-accent/30 transition-all">
+            <div className="p-6 sm:p-8 md:p-10 rounded-2xl sm:rounded-3xl border border-foreground/10 bg-foreground/[0.02] relative group hover:border-accent/30 transition-all">
               <span className="font-mono text-xs tracking-widest text-accent uppercase block mb-4 font-semibold">
                 07:45 AM • Step 02
               </span>
-              <h3 className="font-serif text-2xl mb-4 text-foreground">Cellular Uptake</h3>
+              <h3 className="font-serif text-xl sm:text-2xl mb-3 sm:mb-4 text-foreground">Cellular Uptake</h3>
               <p className="font-sans text-xs sm:text-sm text-foreground/70 leading-relaxed mb-6">
                 45 minutes of hydration and calm baseline breathing. Instead of shocking your nervous system with coffee, allow active cordycepin to bind cleanly to receptors without stimulant competition.
               </p>
@@ -141,11 +149,11 @@ export default function RitualPage() {
               </div>
             </div>
 
-            <div className="p-8 md:p-10 rounded-3xl border border-foreground/10 bg-foreground/[0.02] relative group hover:border-accent/30 transition-all">
+            <div className="p-6 sm:p-8 md:p-10 rounded-2xl sm:rounded-3xl border border-foreground/10 bg-foreground/[0.02] relative group hover:border-accent/30 transition-all">
               <span className="font-mono text-xs tracking-widest text-accent uppercase block mb-4 font-semibold">
                 08:30 AM • Step 03
               </span>
-              <h3 className="font-serif text-2xl mb-4 text-foreground">Sustained Output</h3>
+              <h3 className="font-serif text-xl sm:text-2xl mb-3 sm:mb-4 text-foreground">Sustained Output</h3>
               <p className="font-sans text-xs sm:text-sm text-foreground/70 leading-relaxed mb-6">
                 Transition directly into deep cognitive focus or physical training. Experience a steady, calm baseline where focus is effortless and cardiovascular rate remains completely balanced.
               </p>
@@ -157,16 +165,16 @@ export default function RitualPage() {
         </motion.div>
 
         {/* The 30-Day Transition Curve */}
-        <motion.div variants={itemVariants} className="mb-32 max-w-4xl mx-auto">
-          <div className="text-center mb-16">
+        <motion.div variants={itemVariants} className="mb-20 sm:mb-32 max-w-4xl mx-auto">
+          <div className="text-center mb-10 sm:mb-16">
             <span className="font-mono text-xs uppercase tracking-widest text-accent block mb-2">The Transition Curve</span>
-            <h2 className="font-serif text-3xl md:text-4xl">Replacing Stimulants with Biological Fuel</h2>
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl">Replacing Stimulants with Biological Fuel</h2>
           </div>
 
-          <div className="space-y-6">
-            <div className="p-8 rounded-2xl border border-foreground/10 bg-foreground/[0.02]">
-              <div className="flex items-center justify-between mb-3">
-                <span className="font-serif text-xl text-foreground">Week 1: The Adenosine Clearance</span>
+          <div className="space-y-4 sm:space-y-6">
+            <div className="p-5 sm:p-8 rounded-2xl border border-foreground/10 bg-foreground/[0.02]">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-2 sm:mb-3 gap-1">
+                <span className="font-serif text-lg sm:text-xl text-foreground">Week 1: The Adenosine Clearance</span>
                 <span className="font-mono text-xs text-accent">Day 01 to 07</span>
               </div>
               <p className="font-sans text-xs sm:text-sm text-foreground/60 leading-relaxed">
@@ -174,9 +182,9 @@ export default function RitualPage() {
               </p>
             </div>
 
-            <div className="p-8 rounded-2xl border border-foreground/10 bg-foreground/[0.02]">
-              <div className="flex items-center justify-between mb-3">
-                <span className="font-serif text-xl text-foreground">Week 2: Mitochondrial Upregulation</span>
+            <div className="p-5 sm:p-8 rounded-2xl border border-foreground/10 bg-foreground/[0.02]">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-2 sm:mb-3 gap-1">
+                <span className="font-serif text-lg sm:text-xl text-foreground">Week 2: Mitochondrial Upregulation</span>
                 <span className="font-mono text-xs text-accent">Day 08 to 14</span>
               </div>
               <p className="font-sans text-xs sm:text-sm text-foreground/60 leading-relaxed">
@@ -184,9 +192,9 @@ export default function RitualPage() {
               </p>
             </div>
 
-            <div className="p-8 rounded-2xl border border-foreground/10 bg-foreground/[0.02]">
-              <div className="flex items-center justify-between mb-3">
-                <span className="font-serif text-xl text-foreground">Week 3 to 4: Permanent Baseline Elevation</span>
+            <div className="p-5 sm:p-8 rounded-2xl border border-foreground/10 bg-foreground/[0.02]">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-2 sm:mb-3 gap-1">
+                <span className="font-serif text-lg sm:text-xl text-foreground">Week 3 to 4: Permanent Baseline Elevation</span>
                 <span className="font-mono text-xs text-accent">Day 15 to 30</span>
               </div>
               <p className="font-sans text-xs sm:text-sm text-foreground/60 leading-relaxed">
@@ -197,9 +205,9 @@ export default function RitualPage() {
         </motion.div>
 
         {/* Frequently Asked Inquiries - Anti-Caffeine Focused */}
-        <motion.div variants={itemVariants} className="mt-32 max-w-3xl mx-auto">
-          <h2 className="font-serif text-3xl mb-12 text-center">Protocol Inquiries</h2>
-          <div className="space-y-8">
+        <motion.div variants={itemVariants} className="mt-20 sm:mt-32 max-w-3xl mx-auto">
+          <h2 className="font-serif text-2xl sm:text-3xl mb-8 sm:mb-12 text-center">Protocol Inquiries</h2>
+          <div className="space-y-6 sm:space-y-8">
             {[
               {
                 q: 'Why does Yora advocate against daily caffeine?',
@@ -218,8 +226,8 @@ export default function RitualPage() {
                 a: 'Take 2 capsules daily in the morning on an empty stomach with water. This delivers the full clinical 1200mg dose of standardized Cordyceps militaris extract for sustained all-day mitochondrial energy output.',
               },
             ].map((faq, i) => (
-              <div key={i} className="border-b border-foreground/10 pb-6">
-                <h4 className="font-serif text-xl mb-3">{faq.q}</h4>
+              <div key={i} className="border-b border-foreground/10 pb-5 sm:pb-6">
+                <h4 className="font-serif text-lg sm:text-xl mb-2 sm:mb-3">{faq.q}</h4>
                 <p className="font-sans text-xs sm:text-sm text-foreground/60 leading-relaxed">{faq.a}</p>
               </div>
             ))}
@@ -227,12 +235,12 @@ export default function RitualPage() {
         </motion.div>
 
         {/* Closing Shop CTA Bridge */}
-        <motion.div variants={itemVariants} className="mt-32 text-center border-t border-foreground/10 pt-20">
-          <p className="font-sans text-xs tracking-[0.3em] uppercase text-accent mb-4">The Clean Baseline</p>
-          <h2 className="font-serif text-4xl md:text-5xl mb-8">Begin the 30-Day Reset.</h2>
+        <motion.div variants={itemVariants} className="mt-20 sm:mt-32 text-center border-t border-foreground/10 pt-16 sm:pt-20">
+          <p className="font-sans text-xs tracking-[0.3em] uppercase text-accent mb-3 sm:mb-4">The Clean Baseline</p>
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl mb-6 sm:mb-8">Begin the 30-Day Reset.</h2>
           <Link
             href="/shop"
-            className="inline-block bg-foreground text-background hover:bg-accent hover:text-white transition-all duration-300 px-12 py-5 font-sans text-xs tracking-[0.25em] uppercase shadow-2xl"
+            className="inline-block w-full sm:w-auto bg-foreground text-background hover:bg-accent hover:text-white transition-all duration-300 px-8 sm:px-12 py-4 sm:py-5 font-sans text-xs tracking-[0.2em] sm:tracking-[0.25em] uppercase shadow-2xl text-center"
           >
             Acquire The Cellular Reset • ₹1,499 ↗
           </Link>

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Playfair_Display, Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
@@ -32,6 +32,13 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: '#0d0d0c',
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -39,7 +46,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${playfair.variable} ${inter.variable} ${poppins.variable}`} suppressHydrationWarning>
-      <body className="antialiased selection:bg-accent/20 selection:text-accent relative" suppressHydrationWarning>
+      <body className="antialiased selection:bg-accent/20 selection:text-accent relative overflow-x-hidden w-full min-w-0" suppressHydrationWarning>
         <CursorGlow />
         <Navbar />
         {children}

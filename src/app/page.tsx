@@ -50,9 +50,9 @@ export default function HomePage() {
       <ClosingCTA />
 
       {/* Section 11: Luxury Minimalist Footer */}
-      <footer className="w-full py-16 px-6 lg:px-24 border-t border-foreground/10 font-sans text-xs tracking-widest uppercase text-foreground/40">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
-          <div className="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
+      <footer className="w-full py-12 sm:py-16 px-4 sm:px-6 lg:px-24 border-t border-foreground/10 font-sans text-xs tracking-widest uppercase text-foreground/40">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8">
+          <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 text-center sm:text-left">
             <span className="inline-flex items-center gap-2 text-foreground">
               <img src="/yora-emblem.png" alt="yora emblem" className="w-5 h-5 object-contain" />
               <YoraWordmark className="h-4 w-auto text-foreground" />
@@ -64,7 +64,7 @@ export default function HomePage() {
             <span>© {new Date().getFullYear()} All rights reserved.</span>
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-8 text-[11px]">
+          <div className="flex flex-wrap items-center justify-center gap-5 sm:gap-8 text-[11px]">
             <Link href="/science" className="hover:text-foreground transition-colors duration-300">The Science</Link>
             <Link href="/about" className="hover:text-foreground transition-colors duration-300">About</Link>
             <Link href="/shop" className="hover:text-foreground transition-colors duration-300">Shop</Link>

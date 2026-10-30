@@ -84,13 +84,13 @@ export default function LabSourcingPlaceholder() {
   };
 
   return (
-    <section ref={ref} className="relative w-full py-28 md:py-36 px-6 lg:px-24 bg-background border-t border-foreground/5 overflow-hidden">
+    <section ref={ref} className="relative w-full py-16 sm:py-24 md:py-36 px-4 sm:px-6 lg:px-24 bg-background border-t border-foreground/5 overflow-hidden">
       {/* Background ambient lighting */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-accent/4 rounded-full blur-[180px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] sm:w-[700px] h-[340px] sm:h-[500px] bg-accent/4 rounded-full blur-[120px] sm:blur-[180px] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto">
         {/* Editorial Header matching Reference UI */}
-        <div className="text-center max-w-2xl mx-auto mb-16 md:mb-20">
+        <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16 md:mb-20">
           <motion.p
             initial={{ opacity: 0, y: 15 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -104,7 +104,7 @@ export default function LabSourcingPlaceholder() {
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="font-serif text-4xl sm:text-5xl md:text-6xl text-foreground font-normal tracking-tight"
+            className="font-serif text-3xl sm:text-5xl md:text-6xl text-foreground font-normal tracking-tight"
           >
             Gallery
           </motion.h2>
@@ -121,7 +121,7 @@ export default function LabSourcingPlaceholder() {
             initial={{ opacity: 0, y: 15 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="font-sans text-xs sm:text-sm text-foreground/50 mt-6 max-w-md mx-auto leading-relaxed"
+            className="font-sans text-xs sm:text-sm text-foreground/50 mt-4 sm:mt-6 max-w-md mx-auto leading-relaxed"
           >
             Inside our partner mycology laboratories in India. Sterile cleanroom cultivation, chromatography quantification, and bioactive preservation.
           </motion.p>
@@ -129,7 +129,7 @@ export default function LabSourcingPlaceholder() {
 
         {/* Gallery Slider Card */}
         <div className="relative w-full max-w-5xl mx-auto">
-          <div className="relative w-full h-[360px] sm:h-[420px] md:h-[460px] rounded-[28px] md:rounded-[36px] overflow-hidden border border-foreground/15 bg-neutral-950 shadow-2xl">
+          <div className="relative w-full min-h-[440px] sm:h-[420px] md:h-[460px] rounded-[24px] sm:rounded-[36px] overflow-hidden border border-foreground/15 bg-neutral-950 shadow-2xl">
             <AnimatePresence mode="wait" custom={direction}>
               <motion.div
                 key={current}
@@ -138,7 +138,7 @@ export default function LabSourcingPlaceholder() {
                 initial="enter"
                 animate="center"
                 exit="exit"
-                className={`absolute inset-0 bg-gradient-to-br ${slide.gradient} p-8 sm:p-12 md:p-16 flex flex-col justify-between`}
+                className={`absolute inset-0 bg-gradient-to-br ${slide.gradient} p-5 sm:p-10 md:p-16 flex flex-col justify-between`}
               >
                 {/* Subtle technical background grid */}
                 <div className="absolute inset-0 bg-[radial-gradient(#ffffff08_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none" />
@@ -148,16 +148,16 @@ export default function LabSourcingPlaceholder() {
                   <span className="font-mono text-[10px] sm:text-xs tracking-widest uppercase text-foreground/40">
                     Archive // 0{current + 1}
                   </span>
-                  <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-accent text-[10px] sm:text-xs font-sans tracking-wider uppercase">
+                  <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-accent/10 border border-accent/20 text-accent text-[9px] sm:text-xs font-sans tracking-wider uppercase">
                     <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
                     <span>{slide.badge}</span>
                   </div>
                 </div>
 
                 {/* Card Center: Visual Placeholder Glyph */}
-                <div className="relative z-10 my-auto flex items-center justify-center">
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full border border-foreground/10 bg-foreground/[0.03] backdrop-blur-md flex items-center justify-center text-foreground/30 hover:text-accent hover:border-accent/40 transition-colors">
-                    <svg className="w-8 h-8 sm:w-10 sm:h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2">
+                <div className="relative z-10 my-4 sm:my-auto flex items-center justify-center">
+                  <div className="w-14 h-14 sm:w-20 sm:h-20 rounded-full border border-foreground/10 bg-foreground/[0.03] backdrop-blur-md flex items-center justify-center text-foreground/30 hover:text-accent hover:border-accent/40 transition-colors">
+                    <svg className="w-7 h-7 sm:w-10 sm:h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2">
                       <polygon points="23 7 16 12 23 17 23 7" />
                       <rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
                     </svg>
@@ -166,16 +166,16 @@ export default function LabSourcingPlaceholder() {
 
                 {/* Card Bottom: Overlay text matching Image 1 layout */}
                 <div className="relative z-10 max-w-2xl">
-                  <span className="font-sans text-[10px] sm:text-xs tracking-[0.25em] uppercase text-accent font-semibold block mb-2">
+                  <span className="font-sans text-[10px] sm:text-xs tracking-[0.25em] uppercase text-accent font-semibold block mb-1.5 sm:mb-2">
                     {slide.category}
                   </span>
-                  <h3 className="font-serif text-2xl sm:text-3xl md:text-4xl text-foreground font-normal tracking-tight mb-3">
+                  <h3 className="font-serif text-xl sm:text-3xl md:text-4xl text-foreground font-normal tracking-tight mb-2 sm:mb-3">
                     {slide.title}
                   </h3>
                   <p className="font-sans text-xs sm:text-sm text-foreground/70 leading-relaxed max-w-xl">
                     {slide.desc}
                   </p>
-                  <span className="font-sans text-[10px] sm:text-[11px] text-foreground/40 tracking-wider uppercase block mt-3 font-mono">
+                  <span className="font-sans text-[10px] sm:text-[11px] text-foreground/40 tracking-wider uppercase block mt-2.5 sm:mt-3 font-mono">
                     {slide.status}
                   </span>
                 </div>
